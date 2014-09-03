@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Wordpal</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+ <string name="app_name">Wordpal</string>
+ <string name="action_settings">Settings</string>
+ <string name="question_text">I and you</string>
+ <string name="i_know">I know</string>
+ <string name="i_donot_know">I donot know</string>
 
 </resources>

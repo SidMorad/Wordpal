@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# Organic build shell script
+#
+STIME="$(date +%s)"
+echo "$STIME"
+echo ""
+
+MREPO=/home/andro/.m2/repository
+ANDROID_HOME=/home/andro/android-sdk-linux
+CPATH="
+$PWD/bin/classes:\
+$PWD/../main/bin/classes:\
+$MREPO/junit/junit/4.10/junit-4.10.jar:\
+$ANDROID_HOME/platforms/android-19/android.jar:\
+"
+TSDIR=src
+TTDIR=bin/classes
+
+# Executing FactRunner main class
+#javac -classpath $CPATH $TSDIR/organic/fact/FactRunner.java -d $PWD/$TTDIR
+java -classpath $CPATH organic.fact.FactRunner
+
+ETIME="$(date +%s)"
+echo "$ETIME"
+echo "$(expr $ETIME - $STIME).- Stook"

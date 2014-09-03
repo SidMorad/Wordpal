@@ -1,5 +1,6 @@
-package mars.wordpal;
+package mars.wordpal.interfaces;
 
+import mars.wordpal.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
