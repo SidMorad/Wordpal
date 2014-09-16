@@ -19,12 +19,12 @@
   <Button
    android:layout_width="wrap_content"
    android:layout_height="wrap_content"
-   android:text="@string/i_know"
+   android:text="@string/no"
    />
   <Button
    android:layout_width="wrap_content"
    android:layout_height="wrap_content"
-   android:text="@string/i_donot_know"
+   android:text="@string/yes"
    />
 
  </LinearLayout>
