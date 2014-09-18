@@ -8,14 +8,14 @@ import android.content.Context;
 
 public class WordLab {
   private static WordLab wordLab;
-  private Context appContext;
+//  private Context appContext;
   private ArrayList<Word> words;
 
   public WordLab(Context appContext) {
-    this.appContext = appContext;
+//    this.appContext = appContext;
     this.words = new ArrayList<Word>();
-    for (int i = 0; i < 10; i++) {
-      Word s = new Word("Sentenct #" + i, "anserFa" + i, "answerDe" + i);
+    for (int i = 1; i < 5; i++) {
+      Word s = new Word("Sentence #" + i , "answerFa" + i, "answerDe" + i);
       words.add(s);
     }
   }

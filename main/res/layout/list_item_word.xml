@@ -1,0 +1,51 @@
+<TableLayout
+  xmlns:android = 'http://schemas.android.com/apk/res/android'
+  android:layout_width = 'match_parent'
+  android:layout_height = 'wrap_content' >
+
+<TableRow
+  android:textAlignment = 'center'
+  android:gravity = 'center' >
+
+  <TextView
+    android:layout_width = 'wrap_content'
+    android:layout_height = 'wrap_content'
+    android:id = '@+id/question_id'
+    android:gravity = 'center'
+   />
+</TableRow>
+
+<TableRow
+  android:textAlignment = 'center'
+  android:gravity = 'center' >
+
+  <Button
+    android:id = '@+id/de_id'
+    android:text = '@string/de'
+    android:onClick = 'deToast'
+    style = '@style/button_at_wordlist'
+    />
+
+  <Button
+    android:id = '@+id/not_sure_id'
+    android:text = '@string/not_sure'
+    android:onClick = 'notSure'
+    style = '@style/button_at_wordlist'
+    />
+
+  <Button
+    android:id = '@+id/i_know_id'
+    android:text = '@string/i_know'
+    android:onClick = 'iKnow'
+    style = '@style/button_at_wordlist'
+    />
+
+  <Button
+    android:id = '@+id/fa_id'
+    android:text = '@string/fa'
+    android:onClick = 'faToast'
+    style = '@style/button_at_wordlist'
+    />
+
+</TableRow>
+</TableLayout>

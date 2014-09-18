@@ -9,8 +9,11 @@ import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class WordListFragment extends ListFragment {
 
@@ -23,8 +26,7 @@ public class WordListFragment extends ListFragment {
     getActivity().setTitle(R.string.word_list);
     wordz = WordLab.get(getActivity()).getWords();
 
-    ArrayAdapter<Word> adapter = new ArrayAdapter<Word>(getActivity(),
-        android.R.layout.simple_list_item_1, wordz);
+    ArrayAdapter<Word> adapter = new WordAdapter(wordz, R.id.question_id);
     setListAdapter(adapter);
   }
 
@@ -32,6 +34,34 @@ public class WordListFragment extends ListFragment {
   public void onListItemClick(ListView l, View v, int position, long id) {
     Word w = (Word) getListAdapter().getItem(position);
     Log.d(TAG, w.getQuestion() + " was clicked");
+  }
+
+  private class WordAdapter extends ArrayAdapter<Word> {
+
+    public WordAdapter(ArrayList<Word> wordz, int resourceId) {
+      super(getActivity(), resourceId, wordz);
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+      // If we weren't given a view, inflate one
+      if (convertView == null) {
+        convertView =
+          getActivity().
+          getLayoutInflater().
+          inflate(R.layout.list_item_word, null);
+
+      // Configure the view for this wordz
+      Word w = getItem(position);
+      TextView questionTextView = (TextView) convertView.findViewById(R.id.question_id);
+      questionTextView.setText(w.getQuestion());
+      Button deButton = (Button) convertView.findViewById(R.id.de_id);
+      deButton.setTag(w.getAnswerDe());
+      Button faButton = (Button) convertView.findViewById(R.id.fa_id);
+      faButton.setTag(w.getAnswerFa());
+      }
+      return convertView;
+    }
   }
 
 }
