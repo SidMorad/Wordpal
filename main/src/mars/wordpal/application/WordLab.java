@@ -14,8 +14,8 @@ public class WordLab {
   public WordLab(Context appContext) {
 //    this.appContext = appContext;
     this.words = new ArrayList<Word>();
-    for (int i = 1; i < 5; i++) {
-      Word s = new Word("Sentence #" + i , "answerFa" + i, "answerDe" + i);
+    for (int i = 1; i < 3; i++) {
+      Word s = new Word("Sentence going to be a little bit longer, perhaps two sentences. #" + i , "answerFa" + i, "answerDe" + i);
       words.add(s);
     }
   }

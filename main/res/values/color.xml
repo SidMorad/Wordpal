@@ -1,0 +1,10 @@
+<resources>
+  <color name = 'white'>#ffffff</color>
+  <color name = 'black'>#000000</color>
+  <color name = 'gray' >#d6d6d6</color>
+  <color name = 'gray_darker'>#a6a6a6</color>
+  <color name = 'green'>#00b800</color>
+  <color name = 'yellow'>#ecec00</color>
+  <color name = 'blue_border'>#639aad</color>
+  <color name = 'blue_background'>#7bbede</color>
+</resources>

@@ -1,0 +1,78 @@
+<TableLayout
+  xmlns:android = 'http://schemas.android.com/apk/res/android'
+  android:layout_width = 'match_parent'
+  android:layout_height = 'wrap_content'>
+
+<TableRow
+  android:gravity = 'center'
+  android:textAlignment = 'center'>
+
+  <TextView
+    android:id = '@+id/question_id'
+    android:gravity = 'center'
+    android:layout_span = '2'
+    android:layout_width = 'wrap_content'
+    android:layout_height = 'wrap_content'
+    android:paddingBottom = '16dp'
+   />
+</TableRow>
+<TableRow
+  android:gravity = 'center'
+  android:textAlignment = 'center'>
+
+  <Button
+    android:id = '@+id/not_sure_id'
+    android:text = '@string/not_sure'
+    android:onClick = 'notSure'
+    android:background = '@drawable/button_notsure'
+    android:paddingRight = '4dp'
+    style = '@style/button_at_wordlist'
+    />
+
+  <Button
+    android:id = '@+id/i_know_id'
+    android:text = '@string/i_know'
+    android:onClick = 'iKnow'
+    android:background = '@drawable/button_iknow'
+    android:paddingLeft = '4dp'
+    style = '@style/button_at_wordlist'
+    />
+
+</TableRow>
+<TableRow
+  android:gravity = 'center'
+  android:textAlignment = 'center'>
+
+  <Button
+    android:id = '@+id/de_id'
+    android:text = '@string/de'
+    android:onClick = 'deToast'
+    android:textColor = '@color/white'
+    android:background = '@drawable/button_lang'
+    android:paddingRight = '4dp'
+    style = '@style/button_at_wordlist'
+    />
+
+  <Button
+    android:id = '@+id/fa_id'
+    android:text = '@string/fa'
+    android:onClick = 'faToast'
+    android:textColor = '@color/white'
+    android:background = '@drawable/button_lang'
+    android:paddingLeft = '4dp'
+    style = '@style/button_at_wordlist'
+    />
+</TableRow>
+<TableRow
+  android:gravity = 'center'
+  android:textAlignment = 'center'>
+
+  <TextView
+    android:id = '@+id/answer_id'
+    android:gravity = 'center'
+    android:layout_span = '2'
+    android:layout_width = 'wrap_content'
+    android:layout_height = 'wrap_content'
+   />
+</TableRow>
+</TableLayout>

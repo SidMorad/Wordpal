@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import mars.wordpal.R;
 import mars.wordpal.application.WordLab;
 import mars.wordpal.domain.Word;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -18,7 +18,7 @@ import android.widget.TextView;
 public class WordListFragment extends ListFragment {
 
   private ArrayList<Word> wordz;
-  private static final String TAG = "WordListFragment" ;
+//  private static final String TAG = "WordListFragment" ;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -31,9 +31,18 @@ public class WordListFragment extends ListFragment {
   }
 
   @Override
+  public void onResume() {
+    super.onResume();
+    ((WordAdapter) getListAdapter()).notifyDataSetChanged();
+  }
+
+  @Override
   public void onListItemClick(ListView l, View v, int position, long id) {
     Word w = (Word) getListAdapter().getItem(position);
-    Log.d(TAG, w.getQuestion() + " was clicked");
+    // start activity
+    Intent i = new Intent(getActivity(), WordActivity.class);
+    i.putExtra(WordFragment.EXTRA_WORD_ID, w.getQuestion());
+    startActivity(i);
   }
 
   private class WordAdapter extends ArrayAdapter<Word> {
@@ -49,7 +58,7 @@ public class WordListFragment extends ListFragment {
         convertView =
           getActivity().
           getLayoutInflater().
-          inflate(R.layout.list_item_word, null);
+          inflate(R.layout.wordlist_item, null);
 
       // Configure the view for this wordz
       Word w = getItem(position);
