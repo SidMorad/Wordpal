@@ -6,8 +6,8 @@ STIME="$(date +%s)"
 echo "$STIME"
 echo ""
 
-MREPO=/home/andro/.m2/repository
-ANDROID_HOME=/home/andro/android-sdk-linux
+MREPO=~/.m2/repository
+ANDROID_HOME=~/android-sdk-linux
 CPATH="
 $PWD/bin/classes:\
 $PWD/../main/bin/classes:\
