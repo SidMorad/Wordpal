@@ -17,15 +17,15 @@ public class WordListActivity extends SingleFragmentActivity {
   }
 
   public void faToast(View v)  {
-    Toast.makeText(this, v.getTag() + "", Toast.LENGTH_LONG).show();
+    Toast.makeText(this, (String) v.getTag() , Toast.LENGTH_LONG).show();
   }
 
-  public void iKnow(View v) {
+/*  public void iKnow(View v) {
     Toast.makeText(this, "+1", Toast.LENGTH_SHORT).show();
   }
 
   public void notSure(View v) {
     Toast.makeText(this, "-1", Toast.LENGTH_SHORT).show();
-  }
+  }*/
 
 }

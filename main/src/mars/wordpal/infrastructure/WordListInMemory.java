@@ -2,13 +2,14 @@ package mars.wordpal.infrastructure;
 
 import java.util.TreeSet;
 
+import mars.wordpal.application.WordComparator;
 import mars.wordpal.domain.Word;
 import mars.wordpal.domain.WordCollection;
 
 public class WordListInMemory {
 
-  public WordCollection audioTrainerLesson1() {
-    TreeSet<Word> wordz = new TreeSet<Word>();
+  public static WordCollection wordTrainerLesson1() {
+    TreeSet<Word> wordz = new TreeSet<Word>(WordComparator.getInstance());
     wordz.add(new Word("I", "Ich", "من", 0));
     wordz.add(new Word("I and you", "ich und du", "من و تو", 0));
     wordz.add(new Word("both of us", "wir beide", "هر دو ما", 0));
@@ -17,8 +18,8 @@ public class WordListInMemory {
     wordz.add(new Word("he and she", "er und sie", "او (مرد) و او (زن)", 0));
     wordz.add(new Word("they both", "sie beide", "هر دو آنها", 0));
 
-    wordz.add(new Word("the man", "der Mann", "آقا", 0));
-    wordz.add(new Word("the woman", "die Frau", "خانم", 0));
+    wordz.add(new Word("the man", "der Mann", "مرد", 0));
+    wordz.add(new Word("the woman", "die Frau", "زن", 0));
     wordz.add(new Word("the child", "das Kind", "بچه", 0));
 
     wordz.add(new Word("a family", "eine Familie", "یک خانواده", 0));
@@ -35,8 +36,17 @@ public class WordListInMemory {
 
     
     WordCollection people = new WordCollection(
-        "Audiotrainer_Lesson1_People-Personen", wordz);
+        "WordTrainer Lesson1: People - Personen", wordz);
     return people;
+  }
+
+  public static Word get(String question) {
+    for (Word word : wordTrainerLesson1().wordz()) {
+      if (word.getQuestion().equalsIgnoreCase(question)) {
+        return word;
+      }
+    }
+    return null;
   }
 
 }

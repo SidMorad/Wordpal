@@ -13,8 +13,7 @@ public class WordListTest extends TestCase {
     wordz.add(new Word("Q3", "A-fa-3", "A-de-3", 3));
     wordz.add(new Word("Q2", "A-fa-2", "A-de-2", 2));
     wordz.add(new Word("Q1", "A-fa-1", "A-de-1", 1));
-    assertFalse("Adding duplicate entry returns false",
-        wordz.add(new Word("Q2", "A-fa-2", "A-de-2", 2)));
+    assertFalse("No duplicate question allowed", wordz.add(new Word("Q2", "A-fa-2", "A-de-2", 2)));
 
     WordCollection wordCollection = new WordCollection("CollectionG", wordz);
     assertEquals(4, wordCollection.wordz().size());

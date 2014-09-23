@@ -3,17 +3,15 @@ package mars.wordpal.domain;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
-import mars.wordpal.application.WordComparator;
-
 public class WordCollection {
 
   private String name;
   private int counter = 0;
-  private final TreeSet<Word> wordz = new TreeSet<Word>(WordComparator.getInstance());
+  private TreeSet<Word> wordz;
 
   public WordCollection(String name, TreeSet<Word> wordsz) {
     this.name = name;
-    this.wordz.addAll(wordsz);
+    this.wordz = wordsz;
     this.counter = wordz.size();
   }
 
@@ -38,6 +36,14 @@ public class WordCollection {
     counter--;
     words.add(wordz.pollFirst());
     return words;
+  }
+
+  public Word nextOne() {
+    if (counter == 0) {
+      return null;
+    }
+    counter--;
+    return wordz.pollFirst();
   }
 
 }

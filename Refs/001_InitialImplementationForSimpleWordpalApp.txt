@@ -1,6 +1,6 @@
 number : 1
 
-status : inprogress....
+status : inprogress.....
 
 type : Story/feature
 
@@ -14,5 +14,5 @@ story point :
 
 comments : [
   : "2014-09-03 story was told.",
-  : "Android Programming: The Big Nerd Ranch Guide was used as guide.",
+  : "Android Programming: The Big Nerd Ranch Guide book was used as guide.",
 ]

@@ -20,10 +20,11 @@ public class WordComparator implements Comparator<Word> {
     if (word1 == null || word2 == null) {
       return 0;
     }
-    if (word1.getScore() == word2.getScore()) {
+    if (word1.getQuestion().equalsIgnoreCase(word2.getQuestion()) &&
+        word1.getScore() == word2.getScore()) {
       return 0;
     }
-    if (word1.getScore() > word2.getScore()) {
+    if (word1.getScore() >= word2.getScore()) {
       return +1;
     } else {
       return -1;
