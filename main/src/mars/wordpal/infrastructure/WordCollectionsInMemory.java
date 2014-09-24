@@ -2,11 +2,11 @@ package mars.wordpal.infrastructure;
 
 import java.util.TreeSet;
 
-import mars.wordpal.application.WordComparator;
-import mars.wordpal.domain.Word;
-import mars.wordpal.domain.WordCollection;
+import mars.wordpal.application.comparator.WordComparator;
+import mars.wordpal.domain.model.Word;
+import mars.wordpal.domain.model.WordCollection;
 
-public class WordListInMemory {
+public class WordCollectionsInMemory {
 
   public static WordCollection wordTrainerLesson1() {
     TreeSet<Word> wordz = new TreeSet<Word>(WordComparator.getInstance());

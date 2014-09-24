@@ -3,6 +3,9 @@ package mars.wordpal.domain;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
+import mars.wordpal.domain.model.Word;
+import mars.wordpal.domain.model.WordCollection;
+
 import junit.framework.TestCase;
 
 public class WordListTest extends TestCase {

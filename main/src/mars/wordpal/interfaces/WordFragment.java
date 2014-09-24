@@ -1,8 +1,8 @@
 package mars.wordpal.interfaces;
 
 import mars.wordpal.R;
-import mars.wordpal.domain.Word;
-import mars.wordpal.infrastructure.WordListInMemory;
+import mars.wordpal.domain.model.Word;
+import mars.wordpal.infrastructure.WordCollectionsInMemory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -25,7 +25,7 @@ public class WordFragment extends Fragment {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     String wordId = (String) getArguments().getString(EXTRA_WORD_ID);
-    word = WordListInMemory.get(wordId);
+    word = WordCollectionsInMemory.get(wordId);
   }
 
   @Override

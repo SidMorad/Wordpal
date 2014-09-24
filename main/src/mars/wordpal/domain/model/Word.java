@@ -1,6 +1,6 @@
-package mars.wordpal.domain;
+package mars.wordpal.domain.model;
 
-import mars.wordpal.application.WordComparator;
+import mars.wordpal.application.comparator.WordComparator;
 import mars.wordpal.domain.shared.ValueObject;
 
 public class Word implements Comparable<Word>, ValueObject<Word> {

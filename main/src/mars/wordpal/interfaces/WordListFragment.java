@@ -3,9 +3,9 @@ package mars.wordpal.interfaces;
 import java.util.ArrayList;
 
 import mars.wordpal.R;
-import mars.wordpal.domain.Word;
-import mars.wordpal.domain.WordCollection;
-import mars.wordpal.infrastructure.WordListInMemory;
+import mars.wordpal.domain.model.Word;
+import mars.wordpal.domain.model.WordCollection;
+import mars.wordpal.infrastructure.WordCollectionsInMemory;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -30,7 +30,7 @@ public class WordListFragment extends ListFragment {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     getActivity().setTitle(R.string.word_list);
-    wordCollection = WordListInMemory.wordTrainerLesson1();
+    wordCollection = WordCollectionsInMemory.wordTrainerLesson1();
     wordz = new ArrayList<Word>();
     wordz.add(wordCollection.nextOne());
 

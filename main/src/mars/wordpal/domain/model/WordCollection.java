@@ -1,7 +1,8 @@
-package mars.wordpal.domain;
+package mars.wordpal.domain.model;
 
 import java.util.ArrayList;
 import java.util.TreeSet;
+
 
 public class WordCollection {
 

@@ -1,8 +1,8 @@
-package mars.wordpal.application;
+package mars.wordpal.application.comparator;
 
 import java.util.Comparator;
 
-import mars.wordpal.domain.Word;
+import mars.wordpal.domain.model.Word;
 
 public class WordComparator implements Comparator<Word> {
 
