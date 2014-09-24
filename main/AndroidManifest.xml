@@ -24,7 +24,7 @@
    </intent-filter>
   </activity>
   <activity
-   android:name="mars.wordpal.interfaces.WordActivity"
+   android:name="mars.wordpal.interfaces.WordPagerActivity"
    android:label="@string/word_details" >
   </activity>
  </application>

@@ -17,12 +17,26 @@ public class Word implements Comparable<Word>, ValueObject<Word> {
     this.score = score;
   }
 
+  public void addScore1Up() {
+    if (score == 10) {
+      return;
+    }
+    score = score + 1;
+  }
+
+  public void minesScore1Down() {
+    if (score == 0) {
+      return;
+    }
+    score = score - 1;
+  }
+
   // -- getters
   public String getQuestion() { return question; }
   public String getAnswerDe() { return answerDe; }
   public String getAnswerFa() { return answerFa; }
   public int getScore() { return score; }
-
+  
   @Override
   public String toString() {
     return question;

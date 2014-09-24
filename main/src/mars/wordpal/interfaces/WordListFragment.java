@@ -48,7 +48,7 @@ public class WordListFragment extends ListFragment {
   public void onListItemClick(ListView l, View v, int position, long id) {
     Word w = (Word) getListAdapter().getItem(position);
     // start activity
-    Intent i = new Intent(getActivity(), WordActivity.class);
+    Intent i = new Intent(getActivity(), WordPagerActivity.class);
     i.putExtra(WordFragment.EXTRA_WORD_ID, w.getQuestion());
     startActivity(i);
   }
@@ -68,30 +68,52 @@ public class WordListFragment extends ListFragment {
           getLayoutInflater().
           inflate(R.layout.wordlist_item, null);
 
-      // Configure the view for this wordz
-      final Word w = getItem(position);
-      TextView questionTextView = (TextView) convertView.findViewById(R.id.question_id);
-      questionTextView.setText(w.getQuestion());
-      Button deButton = (Button) convertView.findViewById(R.id.de_id);
-      deButton.setTag(w.getAnswerDe());
-      Button faButton = (Button) convertView.findViewById(R.id.fa_id);
-      faButton.setTag(w.getAnswerFa());
+        // Configure the view for this wordz
+        final Word w = getItem(position);
+        TextView questionTextView = (TextView) convertView.findViewById(R.id.question_id);
+        questionTextView.setText(w.getQuestion());
+        Button deButton = (Button) convertView.findViewById(R.id.de_id);
+        deButton.setTag(w.getAnswerDe());
+        Button faButton = (Button) convertView.findViewById(R.id.fa_id);
+        faButton.setTag(w.getAnswerFa());
 
-      Button iKnowBtn = (Button) convertView.findViewById(R.id.i_know_id);
-      iKnowBtn.setOnClickListener(new OnClickListener() {
-        public void onClick(View v) {
-          Word nextOne = wordCollection.nextOne();
-          if (nextOne == null) {
-            Toast.makeText(getActivity(), "One round is done.", Toast.LENGTH_LONG).show();
-          } else {
-            wordz.clear();
-            wordz.add(nextOne);
-            // Note wordAdapter.notifyDataSetChanged(); didn't work as expected, so we use next line
-            setListAdapter(wordAdapter);
-            Log.d(TAG, "WordAdapter size " + wordAdapter.getCount());
+        Button iKnowBtn = (Button) convertView.findViewById(R.id.i_know_id);
+        iKnowBtn.setOnClickListener(new OnClickListener() {
+          public void onClick(View v) {
+            Word nextOne = wordCollection.nextOne();
+            if (nextOne == null) {
+              Toast.makeText(getActivity(), "One round is done.", Toast.LENGTH_LONG).show();
+              wordCollection.wordz().notify();
+            } else {
+              Word selectedWord = wordz.get(0);
+              selectedWord.addScore1Up();
+              Log.d(TAG, "WORDZ size before add : " + wordCollection.wordz().size());
+              wordCollection.wordz().add(selectedWord);
+              Log.d(TAG, "WORDZ size after add : " + wordCollection.wordz().size());
+              wordz.clear();
+              wordz.add(nextOne);
+              // Note wordAdapter.notifyDataSetChanged(); didn't work as expected, so we use next line
+              setListAdapter(wordAdapter);
+            }
           }
-        }
-      });
+        });
+        Button notSureBtn = (Button) convertView.findViewById(R.id.not_sure_id);
+        notSureBtn.setOnClickListener(new OnClickListener() {
+          @Override
+          public void onClick(View v) {
+            Word nextOne = wordCollection.nextOne();
+            if (nextOne == null) {
+              Toast.makeText(getActivity(), "One round is done.", Toast.LENGTH_LONG).show();
+            } else {
+              Word selectedWord = wordz.get(0);
+              selectedWord.minesScore1Down();
+              wordCollection.wordz().add(selectedWord);
+              wordz.clear();
+              wordz.add(nextOne);
+              setListAdapter(wordAdapter);
+            }
+          }
+        });
       }
       return convertView;
     }
