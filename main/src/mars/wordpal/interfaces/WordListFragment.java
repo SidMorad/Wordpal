@@ -9,7 +9,9 @@ import mars.wordpal.infrastructure.WordCollectionsInMemory;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -21,7 +23,7 @@ import android.widget.Toast;
 
 public class WordListFragment extends ListFragment {
 
-  private static final String TAG = "WordListFragment" ;
+//  private static final String TAG = "WordListFragment" ;
   private ArrayList<Word> wordz;
   private WordAdapter wordAdapter;
   private WordCollection wordCollection;
@@ -36,6 +38,25 @@ public class WordListFragment extends ListFragment {
 
     wordAdapter = new WordAdapter(wordz, R.layout.wordlist_item);
     setListAdapter(wordAdapter);
+    setHasOptionsMenu(true);
+  }
+
+  @Override
+  public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    super.onCreateOptionsMenu(menu, inflater);
+    inflater.inflate(R.menu.wordpal, menu);
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    switch(item.getItemId()) {
+    case R.id.menu_item_select_collection:
+      Intent i = new Intent(getActivity(), SelectCollectionActivity.class);
+      startActivityForResult(i, 0);
+      return true;
+    default:
+      return super.onOptionsItemSelected(item);
+    }
   }
 
   @Override
@@ -87,9 +108,7 @@ public class WordListFragment extends ListFragment {
             } else {
               Word selectedWord = wordz.get(0);
               selectedWord.addScore1Up();
-              Log.d(TAG, "WORDZ size before add : " + wordCollection.wordz().size());
               wordCollection.wordz().add(selectedWord);
-              Log.d(TAG, "WORDZ size after add : " + wordCollection.wordz().size());
               wordz.clear();
               wordz.add(nextOne);
               // Note wordAdapter.notifyDataSetChanged(); didn't work as expected, so we use next line

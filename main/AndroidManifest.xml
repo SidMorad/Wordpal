@@ -27,6 +27,13 @@
    android:name="mars.wordpal.interfaces.WordPagerActivity"
    android:label="@string/word_details" >
   </activity>
+  <activity
+   android:name="mars.wordpal.interfaces.SelectCollectionActivity"
+   android:label="@string/select_collection" >
+   <meta-data
+     android:name="android.support.PARENT_ACTIVITY"
+     android:value="mars.wordpal.interfaces.WordListActivity"/>
+  </activity>
  </application>
 
 </manifest>
