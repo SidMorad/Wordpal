@@ -1,24 +1,11 @@
-<TableLayout
-  xmlns:android = 'http://schemas.android.com/apk/res/android'
-  android:layout_width = 'match_parent'
-  android:layout_height = 'wrap_content'>
-
-<TableRow
+<?xml version="1.0" encoding="utf-8" ?>
+<GridView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/selectCollectionContainer"
   android:gravity="center"
-  android:textAlignment="center">
-  <TextView
-    android:id = "@+id/collectionName"
-    android:gravity="center"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    />
-  <CheckBox
-    android:id="@+id/collectionEnabled"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:layout_alignParentRight = "true"
-    />
-</TableRow>
-
-</TableLayout>
+  android:numColumns="1"
+  android:stretchMode="columnWidth"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+    >
+</GridView>
