@@ -28,8 +28,15 @@
    android:label="@string/word_details" >
   </activity>
   <activity
-   android:name="mars.wordpal.interfaces.SelectCollectionActivity"
+   android:name="mars.wordpal.interfaces.SelectCorequestCodellectionActivity"
    android:label="@string/select_collection" >
+   <meta-data
+     android:name="android.support.PARENT_ACTIVITY"
+     android:value="mars.wordpal.interfaces.WordListActivity"/>
+  </activity>
+  <activity
+   android:name="mars.wordpal.interfaces.settings.SettingsActivity"
+   android:label="@string/settings" >
    <meta-data
      android:name="android.support.PARENT_ACTIVITY"
      android:value="mars.wordpal.interfaces.WordListActivity"/>

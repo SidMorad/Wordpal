@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:padding="4dp">
+
+  <TextView
+    android:gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:text="@string/right_number"/>
+  <EditText
+    android:id="@+id/editRightNumber"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"/>
+
+</LinearLayout>

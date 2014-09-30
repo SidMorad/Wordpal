@@ -5,5 +5,9 @@
     android:id="@+id/menu_item_select_collection"
     android:title="@string/select_collection"
     android:showAsAction="never"/>
-  
+
+  <item
+    android:id="@+id/menu_item_settings"
+    android:title="@string/settings"
+    android:showAsAction="never" />
 </menu>

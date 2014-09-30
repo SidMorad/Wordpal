@@ -6,6 +6,7 @@ import mars.wordpal.R;
 import mars.wordpal.domain.model.Word;
 import mars.wordpal.domain.model.WordCollection;
 import mars.wordpal.infrastructure.WordCollectionsInMemory;
+import mars.wordpal.interfaces.settings.SettingsActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -53,6 +54,10 @@ public class WordListFragment extends ListFragment {
     case R.id.menu_item_select_collection:
       Intent i = new Intent(getActivity(), SelectCollectionActivity.class);
       startActivityForResult(i, 0);
+      return true;
+    case R.id.menu_item_settings:
+      Intent i2 = new Intent(getActivity(), SettingsActivity.class);
+      startActivityForResult(i2, 2);
       return true;
     default:
       return super.onOptionsItemSelected(item);
