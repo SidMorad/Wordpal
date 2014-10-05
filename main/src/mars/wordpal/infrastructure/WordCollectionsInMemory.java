@@ -18,6 +18,16 @@ public class WordCollectionsInMemory {
     return null;
   }
 
+  public static WordCollection getCollection(String collectionName) {
+    if (collectionName.equalsIgnoreCase(wordTrainerLesson1().name())) {
+      return wordTrainerLesson1();
+    }
+    else if (collectionName.equalsIgnoreCase(wordTrainerLesson2().name())) {
+      return wordTrainerLesson2();
+    }
+    return null;
+  }
+
   public static ArrayList<String> CollectionNames() {
     ArrayList<String> collectionNames = new ArrayList<String>();
     collectionNames.add(wordTrainerLesson1().name());

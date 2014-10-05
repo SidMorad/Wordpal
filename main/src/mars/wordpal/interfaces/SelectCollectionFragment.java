@@ -1,6 +1,7 @@
 package mars.wordpal.interfaces;
 
 import mars.wordpal.R;
+import mars.wordpal.application.comparator.CollectionManager;
 import mars.wordpal.infrastructure.WordCollectionsInMemory;
 import android.annotation.TargetApi;
 import android.graphics.Color;
@@ -22,12 +23,15 @@ import android.widget.GridView;
 
 public class SelectCollectionFragment extends Fragment {
 
+  private CollectionManager collectionManager;
+
 //  private static final String TAG = "SelectCollectionFragment";
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setHasOptionsMenu(true);
+    collectionManager = new CollectionManager(getActivity());
   }
 
   @TargetApi(11)
@@ -48,9 +52,11 @@ public class SelectCollectionFragment extends Fragment {
           int color = ((ColorDrawable) background).getColor();
           if (color == Color.WHITE) {
             view.setBackgroundColor(Color.CYAN);
+            String collectionName = WordCollectionsInMemory.CollectionNames().get(position);
+            long result = collectionManager.insertCollection(WordCollectionsInMemory.getCollection(collectionName));
             Toast.makeText(view.getContext(),
               ((TextView) view.findViewById(R.id.collectionName))
-              .getText() + " is active now", Toast.LENGTH_SHORT).show();
+              .getText() + " is active now " + result, Toast.LENGTH_SHORT).show();
           }
           else {
             view.setBackgroundColor(Color.WHITE);
