@@ -1,8 +1,10 @@
 package mars.wordpal.interfaces;
 
+import java.util.ArrayList;
+
 import mars.wordpal.R;
 import mars.wordpal.application.comparator.CollectionManager;
-import mars.wordpal.infrastructure.WordCollectionsInMemory;
+import mars.wordpal.domain.model.WordCollection;
 import android.annotation.TargetApi;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -16,10 +18,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class SelectCollectionFragment extends Fragment {
 
@@ -41,7 +43,8 @@ public class SelectCollectionFragment extends Fragment {
     View v = inflater.inflate(R.layout.fragment_select_collection, parent, false);
 
     GridView gridView = (GridView) v.findViewById(R.id.selectCollectionContainer);
-    gridView.setAdapter(new CollectionAdapter(v.getContext(), WordCollectionsInMemory.CollectionNames()));
+    final ArrayList<WordCollection> userCollections = collectionManager.userCollections();
+    gridView.setAdapter(new CollectionAdapter(v.getContext(), userCollections));
 
     gridView.setOnItemClickListener(new OnItemClickListener() {
       @Override
@@ -52,14 +55,16 @@ public class SelectCollectionFragment extends Fragment {
           int color = ((ColorDrawable) background).getColor();
           if (color == Color.WHITE) {
             view.setBackgroundColor(Color.CYAN);
-            String collectionName = WordCollectionsInMemory.CollectionNames().get(position);
-            long result = collectionManager.insertCollection(WordCollectionsInMemory.getCollection(collectionName));
+            WordCollection wordCollection = userCollections.get(position);
+            collectionManager.markCollectionAsActive(wordCollection);
             Toast.makeText(view.getContext(),
               ((TextView) view.findViewById(R.id.collectionName))
-              .getText() + " is active now " + result, Toast.LENGTH_SHORT).show();
+              .getText() + " is active now ", Toast.LENGTH_SHORT).show();
           }
           else {
             view.setBackgroundColor(Color.WHITE);
+            WordCollection wordCollection = userCollections.get(position);
+            collectionManager.markCollectionAsNotActive(wordCollection);
             Toast.makeText(view.getContext(),
                 ((TextView) view.findViewById(R.id.collectionName))
                 .getText() + " is deactive now", Toast.LENGTH_SHORT).show();

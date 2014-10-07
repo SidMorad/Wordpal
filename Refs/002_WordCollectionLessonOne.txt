@@ -1,0 +1,21 @@
+number : 2
+
+status : inprogress
+
+type : Story/feature
+
+subject : Word collection lesson one
+
+description : Wordpal works with Word collections. Each collection contains
+ a lesson that offers couple of new words to learn. Users could select or
+ unselect Word collections(lessons) for their current day. Lesson one has
+ a little bit different logic than other lessons. Lesson one is free and
+ selected as default. In this story we are trying to target these different
+ scenarios.
+
+story point :
+
+comments : [
+  : "2014-10-6 story was told.",
+  : "",
+]

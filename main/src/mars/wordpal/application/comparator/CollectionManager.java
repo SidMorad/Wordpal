@@ -1,5 +1,7 @@
 package mars.wordpal.application.comparator;
 
+import java.util.ArrayList;
+
 import mars.wordpal.domain.model.WordCollection;
 import mars.wordpal.infrastructure.WordpalDatabaseHelper;
 import android.content.Context;
@@ -19,11 +21,23 @@ public class CollectionManager {
   }
 
   public long insertCollection(WordCollection wordCollection) {
-    return wordpalDatabaseHelper.insert(wordCollection);
+    return wordpalDatabaseHelper.insertCollection(wordCollection);
   }
 
   public long currentWordPostion() {
     return currentWordPosition;
+  }
+
+  public ArrayList<WordCollection> userCollections() {
+    return wordpalDatabaseHelper.userCollections();
+  }
+
+  public void markCollectionAsActive(WordCollection wordCollection) {
+    wordpalDatabaseHelper.markCollectionAsActive(wordCollection);
+  }
+
+  public void markCollectionAsNotActive(WordCollection wordCollection) {
+    wordpalDatabaseHelper.markCollectionAsNotActive(wordCollection);
   }
 
 }

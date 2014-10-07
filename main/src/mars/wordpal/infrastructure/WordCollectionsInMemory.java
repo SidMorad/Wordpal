@@ -55,8 +55,8 @@ public class WordCollectionsInMemory {
     w.add(new Word("We are here", "Wir sind hier", "ما اینجا هستیم", 0));
     w.add(new Word("You are here.", "Ihr seid hier", "شما اینجا هستید", 0));
     w.add(new Word("They are all here", "Sie sind alle hier", "آنها همه اینجا هستند", 0));
-    return new WordCollection(
-        "WordTrainer Lesson1: People - Personen", w);
+    return new WordCollection(0,
+        "WordTrainer Lesson1: People - Personen", w, true);
   }
 
   public static WordCollection wordTrainerLesson2() {
@@ -75,8 +75,8 @@ public class WordCollectionsInMemory {
     w.add(new Word("We are a family", "Wir sind eine Familie", "ما یک خانواده هستیم", 0));
     w.add(new Word("The family is not small", "Die Familie ist nicht klein", "خانواده کوچک نیست", 0));
     w.add(new Word("The family is big", "Die Familie ist groß", "خانواده بزرگ است", 0));
-    return new WordCollection(
-        "WordTrainer Lesson2: Family Members - Familie", w);
+    return new WordCollection(0,
+        "WordTrainer Lesson2: Family Members - Familie", w, false);
   }
 
 }

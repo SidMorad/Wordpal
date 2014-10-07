@@ -5,16 +5,22 @@ import mars.wordpal.domain.shared.ValueObject;
 
 public class Word implements Comparable<Word>, ValueObject<Word> {
 
+  private int id;
   private String question;
+  private int score;
   private String answerFa;
   private String answerDe;
-  private int score;
 
-  public Word(String question, String answerde, String answerfa, int score) {
+  public Word(int id, String question, int score, String answerde, String answerfa) {
+    this.id = id;
     this.question = question;
+    this.score = score;
     this.answerDe = answerde;
     this.answerFa = answerfa;
-    this.score = score;
+  }
+
+  public Word(String question, String answerde, String answerfa, int score) {
+    this(0, question, score, answerde, answerfa);
   }
 
   public void addScore1Up() {
@@ -35,8 +41,9 @@ public class Word implements Comparable<Word>, ValueObject<Word> {
   public String getQuestion() { return question; }
   public String getAnswerDe() { return answerDe; }
   public String getAnswerFa() { return answerFa; }
-  public int getScore() { return score; }
-  
+  public int score() { return score; }
+  public int id() { return id; }
+
   @Override
   public String toString() {
     return question;

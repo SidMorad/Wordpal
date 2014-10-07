@@ -3,6 +3,7 @@ package mars.wordpal.interfaces;
 import java.util.ArrayList;
 
 import mars.wordpal.R;
+import mars.wordpal.domain.model.WordCollection;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -14,21 +15,21 @@ import android.widget.TextView;
 public class CollectionAdapter extends BaseAdapter {
 
   private Context context;
-  private final ArrayList<String> collectionNames;
+  private final ArrayList<WordCollection> collections;
 
-  public CollectionAdapter(Context context, ArrayList<String> list) {
+  public CollectionAdapter(Context context, ArrayList<WordCollection> list) {
     this.context = context;
-    this.collectionNames = list;
+    this.collections = list;
   }
 
   @Override
   public int getCount() {
-    return collectionNames.size();
+    return collections.size();
   }
 
   @Override
   public Object getItem(int position) {
-    return collectionNames.get(position);
+    return collections.get(position);
   }
 
   @Override
@@ -48,18 +49,18 @@ public class CollectionAdapter extends BaseAdapter {
       gridView = inflater.inflate(R.layout.fragment_select_collection_fields, null);
 
       TextView textView = (TextView) gridView.findViewById(R.id.collectionName);
-      textView.setText(collectionNames.get(position));
+      textView.setText(collections.get(position).name());
 
     }
     else {
       gridView = convertView;
     }
 
-    if (position % 2 == 0) {
-      gridView.setBackgroundColor(Color.WHITE);
+    if (collections.get(position).active()) {
+      gridView.setBackgroundColor(Color.CYAN);
     }
     else {
-      gridView.setBackgroundColor(Color.CYAN);
+      gridView.setBackgroundColor(Color.WHITE);
     }
 
     return gridView;

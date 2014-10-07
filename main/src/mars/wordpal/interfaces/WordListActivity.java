@@ -1,5 +1,6 @@
 package mars.wordpal.interfaces;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.Toast;
@@ -10,6 +11,11 @@ public class WordListActivity extends SingleFragmentActivity {
   @Override
   protected Fragment createFragment() {
     return new WordListFragment();
+  }
+
+  public void goToSelectCollection(View v) {
+    Intent i = new Intent(this, SelectCollectionActivity.class);
+    startActivity(i);
   }
 
   public void deToast(View v)  {

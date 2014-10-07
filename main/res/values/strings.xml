@@ -11,5 +11,6 @@
  <string name = 'not_sure' >Not sure</string>
  <string name = 'select_collection'>Select Collection</string>
  <string name = 'right_number'>Right Number</string>
+ <string name = 'empty_list_view_text_message'>Select at least one collection</string>
 
 </resources>

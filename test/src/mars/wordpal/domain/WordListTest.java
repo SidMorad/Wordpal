@@ -18,10 +18,10 @@ public class WordListTest extends TestCase {
     wordz.add(new Word("Q1", "A-fa-1", "A-de-1", 1));
     assertFalse("No duplicate question allowed", wordz.add(new Word("Q2", "A-fa-2", "A-de-2", 2)));
 
-    WordCollection wordCollection = new WordCollection("CollectionG", wordz);
+    WordCollection wordCollection = new WordCollection(0, "CollectionG", wordz, true);
     assertEquals(4, wordCollection.wordz().size());
-    assertEquals(1, wordCollection.wordz().first().getScore());
-    assertEquals(4, wordCollection.wordz().last().getScore());
+    assertEquals(1, wordCollection.wordz().first().score());
+    assertEquals(4, wordCollection.wordz().last().score());
 
     ArrayList<Word> firstTwo = wordCollection.nextTwo();
     assertEquals(2, firstTwo.size());

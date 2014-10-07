@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import mars.wordpal.R;
 import mars.wordpal.domain.model.Word;
 import mars.wordpal.domain.model.WordCollection;
-import mars.wordpal.infrastructure.WordCollectionsInMemory;
+import mars.wordpal.infrastructure.WordpalDatabaseHelper;
 import mars.wordpal.interfaces.settings.SettingsActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,12 +28,14 @@ public class WordListFragment extends ListFragment {
   private ArrayList<Word> wordz;
   private WordAdapter wordAdapter;
   private WordCollection wordCollection;
+  private WordpalDatabaseHelper wordpalDatabaseHelper;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     getActivity().setTitle(R.string.word_list);
-    wordCollection = WordCollectionsInMemory.wordTrainerLesson1();
+    wordpalDatabaseHelper = new WordpalDatabaseHelper(getActivity());
+    wordCollection = wordpalDatabaseHelper.currentCollection();
     wordz = new ArrayList<Word>();
     wordz.add(wordCollection.nextOne());
 
@@ -87,6 +89,14 @@ public class WordListFragment extends ListFragment {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+      final Word w = getItem(position);
+      // Display empty view if getItem returns null.
+      if (w == null) {
+        return getActivity().
+            getLayoutInflater().
+            inflate(R.layout.emptylist_item, null);
+      }
+
       // If we weren't given a view, inflate one
       if (convertView == null) {
         convertView =
@@ -95,7 +105,6 @@ public class WordListFragment extends ListFragment {
           inflate(R.layout.wordlist_item, null);
 
         // Configure the view for this wordz
-        final Word w = getItem(position);
         TextView questionTextView = (TextView) convertView.findViewById(R.id.question_id);
         questionTextView.setText(w.getQuestion());
         Button deButton = (Button) convertView.findViewById(R.id.de_id);
@@ -109,7 +118,7 @@ public class WordListFragment extends ListFragment {
             Word nextOne = wordCollection.nextOne();
             if (nextOne == null) {
               Toast.makeText(getActivity(), "One round is done.", Toast.LENGTH_LONG).show();
-              wordCollection.wordz().notify();
+              wordCollection = wordpalDatabaseHelper.currentCollection();
             } else {
               Word selectedWord = wordz.get(0);
               selectedWord.addScore1Up();
@@ -141,6 +150,7 @@ public class WordListFragment extends ListFragment {
       }
       return convertView;
     }
+
   }
 
 }

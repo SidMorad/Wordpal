@@ -1,7 +1,7 @@
 package mars.wordpal.interfaces.settings;
 
-import android.support.v4.app.Fragment;
 import mars.wordpal.interfaces.SingleFragmentActivity;
+import android.support.v4.app.Fragment;
 
 public class SettingsActivity extends SingleFragmentActivity {
 

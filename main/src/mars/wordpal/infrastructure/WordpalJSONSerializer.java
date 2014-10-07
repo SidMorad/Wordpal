@@ -9,11 +9,12 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
+import mars.wordpal.domain.model.Settings;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-import mars.wordpal.domain.model.Settings;
 import android.content.Context;
 
 public class WordpalJSONSerializer {

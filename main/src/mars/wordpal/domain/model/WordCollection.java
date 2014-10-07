@@ -6,18 +6,30 @@ import java.util.TreeSet;
 
 public class WordCollection {
 
+  private int id;
   private String name;
+  private Boolean active;
   private int counter = 0;
   private TreeSet<Word> wordz;
 
-  public WordCollection(String name, TreeSet<Word> wordsz) {
+  public WordCollection(int id, String name, TreeSet<Word> wordsz, boolean active) {
+    this.id = id;
     this.name = name;
+    this.active = active;
     this.wordz = wordsz;
-    this.counter = wordz.size();
+    this.counter = wordz == null ? 0 : wordz.size();
+  }
+
+  public int id() {
+    return id;
   }
 
   public String name() {
     return name;
+  }
+
+  public Boolean active() {
+    return active;
   }
 
   public TreeSet<Word> wordz() {
