@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import mars.wordpal.R;
 import mars.wordpal.domain.model.Word;
 import mars.wordpal.domain.model.WordCollection;
-import mars.wordpal.infrastructure.WordpalDatabaseHelper;
+import mars.wordpal.infrastructure.DatabaseManager;
 import mars.wordpal.interfaces.settings.SettingsActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +18,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,14 +27,14 @@ public class WordListFragment extends ListFragment {
   private ArrayList<Word> wordz;
   private WordAdapter wordAdapter;
   private WordCollection wordCollection;
-  private WordpalDatabaseHelper wordpalDatabaseHelper;
+  private DatabaseManager databaseManager;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     getActivity().setTitle(R.string.word_list);
-    wordpalDatabaseHelper = new WordpalDatabaseHelper(getActivity());
-    wordCollection = wordpalDatabaseHelper.currentCollection();
+    databaseManager = new DatabaseManager(getActivity());
+    wordCollection = databaseManager.currentCollection();
     wordz = new ArrayList<Word>();
     wordz.add(wordCollection.nextOne());
 
@@ -72,14 +71,14 @@ public class WordListFragment extends ListFragment {
     ((WordAdapter) getListAdapter()).notifyDataSetChanged();
   }
 
-  @Override
+/*  @Override
   public void onListItemClick(ListView l, View v, int position, long id) {
     Word w = (Word) getListAdapter().getItem(position);
     // start activity
     Intent i = new Intent(getActivity(), WordPagerActivity.class);
     i.putExtra(WordFragment.EXTRA_WORD_ID, w.getQuestion());
     startActivity(i);
-  }
+  }*/
 
   private class WordAdapter extends ArrayAdapter<Word> {
 
@@ -96,6 +95,7 @@ public class WordListFragment extends ListFragment {
             getLayoutInflater().
             inflate(R.layout.emptylist_item, null);
       }
+      System.out.println(w.id() + " " + w.getQuestion() + " " + w.score() + " " + w.getAnswerDe());
 
       // If we weren't given a view, inflate one
       if (convertView == null) {
@@ -107,22 +107,24 @@ public class WordListFragment extends ListFragment {
         // Configure the view for this wordz
         TextView questionTextView = (TextView) convertView.findViewById(R.id.question_id);
         questionTextView.setText(w.getQuestion());
+        TextView scoreTextView = (TextView) convertView.findViewById(R.id.score_id);
+        scoreTextView.setText("Score : " + w.score());
         Button deButton = (Button) convertView.findViewById(R.id.de_id);
         deButton.setTag(w.getAnswerDe());
         Button faButton = (Button) convertView.findViewById(R.id.fa_id);
         faButton.setTag(w.getAnswerFa());
+        final TextView answerTextView = (TextView) convertView.findViewById(R.id.answer_id);
 
         Button iKnowBtn = (Button) convertView.findViewById(R.id.i_know_id);
         iKnowBtn.setOnClickListener(new OnClickListener() {
           public void onClick(View v) {
+            databaseManager.updateWordScorePlus(w);
             Word nextOne = wordCollection.nextOne();
             if (nextOne == null) {
               Toast.makeText(getActivity(), "One round is done.", Toast.LENGTH_LONG).show();
-              wordCollection = wordpalDatabaseHelper.currentCollection();
+              wordCollection = databaseManager.currentCollection();
+              answerTextView.setText("Break time, have a tea!");
             } else {
-              Word selectedWord = wordz.get(0);
-              selectedWord.addScore1Up();
-              wordCollection.wordz().add(selectedWord);
               wordz.clear();
               wordz.add(nextOne);
               // Note wordAdapter.notifyDataSetChanged(); didn't work as expected, so we use next line
@@ -134,13 +136,13 @@ public class WordListFragment extends ListFragment {
         notSureBtn.setOnClickListener(new OnClickListener() {
           @Override
           public void onClick(View v) {
+            databaseManager.updateWordScoreMines(w);
             Word nextOne = wordCollection.nextOne();
             if (nextOne == null) {
               Toast.makeText(getActivity(), "One round is done.", Toast.LENGTH_LONG).show();
+              wordCollection = databaseManager.currentCollection();
+              answerTextView.setText("Break time, have a tea!");
             } else {
-              Word selectedWord = wordz.get(0);
-              selectedWord.minesScore1Down();
-              wordCollection.wordz().add(selectedWord);
               wordz.clear();
               wordz.add(nextOne);
               setListAdapter(wordAdapter);
@@ -151,6 +153,10 @@ public class WordListFragment extends ListFragment {
       return convertView;
     }
 
+    @Override
+    public boolean isEnabled(int position) {
+      return false;
+    }
   }
 
 }

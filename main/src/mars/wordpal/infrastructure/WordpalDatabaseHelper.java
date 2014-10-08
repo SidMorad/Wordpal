@@ -3,6 +3,7 @@ package mars.wordpal.infrastructure;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
+import mars.wordpal.application.comparator.WordComparator;
 import mars.wordpal.domain.model.Word;
 import mars.wordpal.domain.model.WordCollection;
 import android.content.ContentValues;
@@ -97,12 +98,13 @@ public class WordpalDatabaseHelper extends SQLiteOpenHelper {
     return collection;
   }
 
-  public WordCollection currentCollection() {
+  public WordCollection currentCollection(int maxScore) {
     Cursor cursor = getReadableDatabase().rawQuery(
-      "SELECT * FROM word w INNER JOIN collection c ON w.cid=c.id where c." +ACTIVE+ "=1", null);
-    TreeSet<Word> wordz = new TreeSet<Word>();
+      "SELECT w.id, w.question, w.score, w.answerde, w.answerfa FROM word w INNER JOIN collection c ON w.cid=c.id where c." +ACTIVE+ "=1 AND w.score <" + maxScore, null);
+    TreeSet<Word> wordz = new TreeSet<Word>(WordComparator.getInstance());
     if (cursor.moveToFirst()) {
       do {
+        System.out.println(" Found id ist " + cursor.getInt(cursor.getColumnIndexOrThrow(ID)));
         wordz.add(new Word(
           cursor.getInt(cursor.getColumnIndexOrThrow(ID)),
           cursor.getString(cursor.getColumnIndexOrThrow(QUESTION)),
@@ -158,6 +160,50 @@ public class WordpalDatabaseHelper extends SQLiteOpenHelper {
     ContentValues cv = new ContentValues();
     cv.put(ACTIVE, 0);
     getWritableDatabase().update(TABLE_COLLECTION, cv , NAME + "=?", new String[] {wordCollection.name()});
+  }
+
+  public void updateWordScorePlus(Word selectedWord, int maxScore) {
+    Word current = selectWord(selectedWord.id());
+    if (current.score() < maxScore) {
+      System.out.println(current.id() + " Current score is " + current.score() + " max is " + maxScore);
+      current.addScore1Up();
+      ContentValues cv = new ContentValues();
+      cv.put(SCORE, current.score());
+      getWritableDatabase().update(TABLE_WORD, cv, ID + "=?", new String[] { selectedWord.id() + ""});
+    }
+  }
+
+  public void updateWordScoreMines(Word selectedWord) {
+    Word current = selectWord(selectedWord.id());
+    if (current.score() != 0) {
+      System.out.println(current.id() + "Current score is " + current.score());
+      current.minesScore1Down();
+      ContentValues cv = new ContentValues();
+      cv.put(SCORE, current.score());
+      getWritableDatabase().update(TABLE_WORD, cv, ID + "=?", new String[] { selectedWord.id() + ""});
+    }
+  }
+
+  private Word selectWord(int id) {
+    Cursor cursor = getReadableDatabase().query(true, TABLE_WORD,
+        new String[] { ID, QUESTION, SCORE, ANSWERDE, ANSWERFA },
+        ID + "=?",
+        new String[] { id + ""},
+        null, null, null, null);
+      Word word = null;
+      if (cursor.moveToFirst()) {
+        word = new Word(
+          cursor.getInt(cursor.getColumnIndexOrThrow(ID)),
+          cursor.getString(cursor.getColumnIndexOrThrow(QUESTION)),
+          cursor.getInt(cursor.getColumnIndexOrThrow(SCORE)),
+          cursor.getString(cursor.getColumnIndexOrThrow(ANSWERDE)),
+          cursor.getString(cursor.getColumnIndexOrThrow(ANSWERFA)
+        ));
+      }
+      if (cursor != null && !cursor.isClosed()) {
+        cursor.close();
+      }
+      return word;
   }
 
 }

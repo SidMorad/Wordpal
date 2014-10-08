@@ -27,14 +27,14 @@ public class Word implements Comparable<Word>, ValueObject<Word> {
     if (score == 10) {
       return;
     }
-    score = score + 1;
+    score++;
   }
 
   public void minesScore1Down() {
     if (score == 0) {
       return;
     }
-    score = score - 1;
+    score--;
   }
 
   // -- getters

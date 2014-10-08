@@ -1,9 +1,10 @@
 package mars.wordpal.interfaces;
 
+import mars.wordpal.R;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.TextView;
 
 public class WordListActivity extends SingleFragmentActivity {
 //  private static final String TAG = "WordListActivity";
@@ -19,19 +20,13 @@ public class WordListActivity extends SingleFragmentActivity {
   }
 
   public void deToast(View v)  {
-    Toast.makeText(this, (String) v.getTag() , Toast.LENGTH_LONG).show();
+    TextView answerTextView = (TextView) findViewById(R.id.answer_id);
+    answerTextView.setText((String) v.getTag()); 
   }
 
   public void faToast(View v)  {
-    Toast.makeText(this, (String) v.getTag() , Toast.LENGTH_LONG).show();
+    TextView answerTextView = (TextView) findViewById(R.id.answer_id);
+    answerTextView.setText((String) v.getTag()); 
   }
-
-/*  public void iKnow(View v) {
-    Toast.makeText(this, "+1", Toast.LENGTH_SHORT).show();
-  }
-
-  public void notSure(View v) {
-    Toast.makeText(this, "-1", Toast.LENGTH_SHORT).show();
-  }*/
 
 }

@@ -3,8 +3,8 @@ package mars.wordpal.interfaces;
 import java.util.ArrayList;
 
 import mars.wordpal.R;
-import mars.wordpal.application.comparator.CollectionManager;
 import mars.wordpal.domain.model.WordCollection;
+import mars.wordpal.infrastructure.DatabaseManager;
 import android.annotation.TargetApi;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -25,7 +25,7 @@ import android.widget.Toast;
 
 public class SelectCollectionFragment extends Fragment {
 
-  private CollectionManager collectionManager;
+  private DatabaseManager collectionManager;
 
 //  private static final String TAG = "SelectCollectionFragment";
 
@@ -33,7 +33,7 @@ public class SelectCollectionFragment extends Fragment {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setHasOptionsMenu(true);
-    collectionManager = new CollectionManager(getActivity());
+    collectionManager = new DatabaseManager(getActivity());
   }
 
   @TargetApi(11)

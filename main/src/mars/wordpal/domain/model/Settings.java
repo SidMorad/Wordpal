@@ -28,4 +28,8 @@ public class Settings {
   public int rightNumber() {
     return rightNumber;
   }
+
+  public void setRightNumber(int rightNumber) {
+    this.rightNumber = rightNumber;
+  }
 }

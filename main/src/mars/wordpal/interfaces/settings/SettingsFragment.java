@@ -1,13 +1,8 @@
 package mars.wordpal.interfaces.settings;
 
-import java.io.IOException;
-
 import mars.wordpal.R;
 import mars.wordpal.domain.model.Settings;
-import mars.wordpal.infrastructure.WordpalJSONSerializer;
-
-import org.json.JSONException;
-
+import mars.wordpal.infrastructure.DatabaseManager;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,12 +19,14 @@ import android.widget.Toast;
 
 public class SettingsFragment extends Fragment {
 
+  private DatabaseManager databaseManager;
 //  private static final String TAG = "SettingsFragment";
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setHasOptionsMenu(true);
+    databaseManager = new DatabaseManager(getActivity());
   }
 
   @TargetApi(11)
@@ -39,30 +36,20 @@ public class SettingsFragment extends Fragment {
     final View v = inflater.inflate(R.layout.fragment_settings, parent, false);
 
     final EditText editText = (EditText) v.findViewById(R.id.editRightNumber);
-    final WordpalJSONSerializer wjs = new WordpalJSONSerializer(v.getContext());
-    try {
-      Settings settings2 = wjs.loadSettings();
-      editText.setText(settings2.rightNumber() + "");
-    } catch (IOException io) {
-    } catch (JSONException jo) {
-    } finally {
-      if (editText.getText().toString().trim().isEmpty()) {
-        editText.setText("10");
-      }
-    }
+    editText.setText(databaseManager.rightNumber() + "");
     editText.addTextChangedListener(new TextWatcher() {
       public void onTextChanged(CharSequence s, int start, int before, int count) {}
       public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
       public void afterTextChanged(Editable s) {
         if (isInt(editText.getText().toString())) {
           Integer rightNumber = Integer.valueOf(editText.getText().toString());
-          Settings settings = new Settings(rightNumber);
-          try {
-            wjs.saveSettings(settings);
-          } catch (IOException e) {
-            Toast.makeText(v.getContext(), "Oops! " + e.getMessage(), Toast.LENGTH_SHORT).show();
-          } catch (JSONException e) {
-            Toast.makeText(v.getContext(), "Oops! " + e.getMessage(), Toast.LENGTH_SHORT).show();
+          if (rightNumber < 4) {
+            Toast.makeText(v.getContext(), "Should be higher than 3", Toast.LENGTH_SHORT).show();
+          }
+          else {
+            Settings settings = databaseManager.loadSettings();
+            settings.setRightNumber(rightNumber);
+            databaseManager.storeSettings(settings);
           }
         }
       }

@@ -1,7 +1,7 @@
 <TableLayout
   xmlns:android = 'http://schemas.android.com/apk/res/android'
   android:layout_width = 'match_parent'
-  android:layout_height = 'wrap_content'>
+  android:layout_height = 'match_parent'>
 
 <TableRow
   android:gravity = 'center'
@@ -10,9 +10,11 @@
   <TextView
     android:id = '@+id/question_id'
     android:gravity = 'center'
-    android:layout_span = '4'
-    android:layout_width = 'wrap_content'
-    android:layout_height = 'wrap_content'
+    android:layout_span = '1'
+    android:layout_width = 'match_parent'
+    android:layout_height = 'match_parent'
+    android:textSize="@dimen/font_large"
+    android:paddingBottom="20dp"
    />
 </TableRow>
 
@@ -20,33 +22,37 @@
   android:textAlignment = 'center'
   android:gravity = 'center'
   android:paddingBottom = '16dp'>
+<LinearLayout
+  android:layout_weight="1"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
 
   <Button
     android:id = '@+id/de_id'
     android:text = '@string/de'
-    android:gravity = 'right|center_vertical'
     android:onClick = 'deToast'
     android:textColor = '@color/white'
     android:background = '@drawable/button_lang'
     android:paddingRight = '4dp'
+    android:layout_weight="0.25"
     style = '@style/button_at_wordlist'
     />
 
   <Button
     android:id = '@+id/not_sure_id'
     android:text = '@string/not_sure'
-    android:gravity = 'right|center_vertical'
     android:background = '@drawable/button_notsure'
     android:paddingRight = '4dp'
+    android:layout_weight="0.25"
     style = '@style/button_at_wordlist'
     />
 
   <Button
     android:id = '@+id/i_know_id'
     android:text = '@string/i_know'
-    android:gravity = 'left|center_vertical'
     android:background = '@drawable/button_iknow'
     android:paddingLeft = '4dp'
+    android:layout_weight="0.25"
     style = '@style/button_at_wordlist'
     />
 
@@ -54,12 +60,36 @@
     android:id = '@+id/fa_id'
     android:text = '@string/fa'
     android:onClick = 'faToast'
-    android:gravity = 'left|center_vertical'
     android:textColor = '@color/white'
     android:background = '@drawable/button_lang'
     android:paddingLeft = '4dp'
+    android:layout_weight="0.25"
     style = '@style/button_at_wordlist'
     />
+</LinearLayout>
+</TableRow>
+<TableRow
+  android:textAlignment = 'center'
+  android:gravity = 'center'
+  android:paddingTop = '16dp'>
 
+  <TextView
+    android:id="@+id/score_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="@dimen/font_medium"
+    />
+</TableRow>
+<TableRow
+  android:textAlignment = 'center'
+  android:gravity = 'center'
+  android:paddingTop = '16dp'>
+
+  <TextView
+    android:id="@+id/answer_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="@dimen/font_large"
+    />
 </TableRow>
 </TableLayout>

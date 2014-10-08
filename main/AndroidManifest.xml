@@ -18,7 +18,8 @@
   android:supportsRtl = 'false'>
   <activity
    android:name="mars.wordpal.interfaces.WordListActivity"
-   android:label="@string/word_list" >
+   android:label="@string/word_list"
+   android:screenOrientation="landscape">
    <intent-filter>
     <action android:name="android.intent.action.MAIN" />
     <category android:name="android.intent.category.LAUNCHER" />
