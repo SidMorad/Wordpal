@@ -13,5 +13,9 @@
  <string name = 'right_number'>Right Number</string>
  <string name = 'empty_list_view_text_message'>Select at least one collection</string>
  <string name = 'score_'>Score : </string>
+ <string name = 'reset'>Reset</string>
+ <string name = 'exit'>Exit</string>
+ <string name = 'shop_in_store'>Shop in store</string>
+ <string name = 'view_archived'>View archived</string>
 
 </resources>

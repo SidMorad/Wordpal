@@ -7,8 +7,6 @@ import mars.wordpal.domain.model.WordCollection;
 import mars.wordpal.infrastructure.DatabaseManager;
 import android.annotation.TargetApi;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -25,7 +23,8 @@ import android.widget.Toast;
 
 public class SelectCollectionFragment extends Fragment {
 
-  private DatabaseManager collectionManager;
+  private DatabaseManager databaseManager;
+  private ArrayList<WordCollection> userCollections;
 
 //  private static final String TAG = "SelectCollectionFragment";
 
@@ -33,7 +32,7 @@ public class SelectCollectionFragment extends Fragment {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setHasOptionsMenu(true);
-    collectionManager = new DatabaseManager(getActivity());
+    databaseManager = new DatabaseManager(getActivity());
   }
 
   @TargetApi(11)
@@ -43,36 +42,31 @@ public class SelectCollectionFragment extends Fragment {
     View v = inflater.inflate(R.layout.fragment_select_collection, parent, false);
 
     GridView gridView = (GridView) v.findViewById(R.id.selectCollectionContainer);
-    final ArrayList<WordCollection> userCollections = collectionManager.userCollections();
+    userCollections = databaseManager.userCollections();
     gridView.setAdapter(new CollectionAdapter(v.getContext(), userCollections));
 
     gridView.setOnItemClickListener(new OnItemClickListener() {
       @Override
       public void onItemClick(AdapterView<?> parent, View view, int position,
           long id) {
-        Drawable background = view.getBackground();
-        if (background instanceof ColorDrawable) {
-          int color = ((ColorDrawable) background).getColor();
-          if (color == Color.WHITE) {
-            view.setBackgroundColor(Color.CYAN);
-            WordCollection wordCollection = userCollections.get(position);
-            collectionManager.markCollectionAsActive(wordCollection);
-            Toast.makeText(view.getContext(),
-              ((TextView) view.findViewById(R.id.collectionName))
-              .getText() + " is active now ", Toast.LENGTH_SHORT).show();
-          }
-          else {
-            view.setBackgroundColor(Color.WHITE);
-            WordCollection wordCollection = userCollections.get(position);
-            collectionManager.markCollectionAsNotActive(wordCollection);
-            Toast.makeText(view.getContext(),
-                ((TextView) view.findViewById(R.id.collectionName))
-                .getText() + " is deactive now", Toast.LENGTH_SHORT).show();
-          }
+        WordCollection current = userCollections.get(position);
+        if (!current.active()) {
+          view.setBackgroundColor(Color.GREEN);
+          WordCollection wordCollection = userCollections.get(position);
+          databaseManager.markCollectionAsActive(wordCollection);
+          Toast.makeText(view.getContext(),
+            ((TextView) view.findViewById(R.id.collectionName))
+            .getText() + " is active now ", Toast.LENGTH_SHORT).show();
         }
         else {
-          Toast.makeText(view.getContext(), "background color not found", Toast.LENGTH_SHORT);
+          view.setBackgroundColor(Color.WHITE);
+          WordCollection wordCollection = userCollections.get(position);
+          databaseManager.markCollectionAsNotActive(wordCollection);
+          Toast.makeText(view.getContext(),
+              ((TextView) view.findViewById(R.id.collectionName))
+              .getText() + " is deactive now", Toast.LENGTH_SHORT).show();
         }
+        userCollections = databaseManager.userCollections();
       }
     });
 

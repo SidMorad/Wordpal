@@ -31,6 +31,15 @@ public class WordpalDatabaseHelper extends SQLiteOpenHelper {
 
   private static final String TAG = "WordpalDatabaseHelper";
 
+  private static WordpalDatabaseHelper instance;
+
+  public static synchronized WordpalDatabaseHelper getInstance(Context context) {
+    if (instance == null) {
+      instance = new WordpalDatabaseHelper(context);
+    }
+    return instance;
+  }
+
   public WordpalDatabaseHelper(Context context) {
     super(context, DB_NAME, null, VERSION);
   }
@@ -104,7 +113,6 @@ public class WordpalDatabaseHelper extends SQLiteOpenHelper {
     TreeSet<Word> wordz = new TreeSet<Word>(WordComparator.getInstance());
     if (cursor.moveToFirst()) {
       do {
-        System.out.println(" Found id ist " + cursor.getInt(cursor.getColumnIndexOrThrow(ID)));
         wordz.add(new Word(
           cursor.getInt(cursor.getColumnIndexOrThrow(ID)),
           cursor.getString(cursor.getColumnIndexOrThrow(QUESTION)),
@@ -165,7 +173,6 @@ public class WordpalDatabaseHelper extends SQLiteOpenHelper {
   public void updateWordScorePlus(Word selectedWord, int maxScore) {
     Word current = selectWord(selectedWord.id());
     if (current.score() < maxScore) {
-      System.out.println(current.id() + " Current score is " + current.score() + " max is " + maxScore);
       current.addScore1Up();
       ContentValues cv = new ContentValues();
       cv.put(SCORE, current.score());
@@ -176,7 +183,6 @@ public class WordpalDatabaseHelper extends SQLiteOpenHelper {
   public void updateWordScoreMines(Word selectedWord) {
     Word current = selectWord(selectedWord.id());
     if (current.score() != 0) {
-      System.out.println(current.id() + "Current score is " + current.score());
       current.minesScore1Down();
       ContentValues cv = new ContentValues();
       cv.put(SCORE, current.score());

@@ -19,7 +19,7 @@ public class DatabaseManager {
 
   public DatabaseManager(Context context) {
     this.context = context;
-    this.wordpalDatabaseHelper = new WordpalDatabaseHelper(this.context);
+    this.wordpalDatabaseHelper = WordpalDatabaseHelper.getInstance(this.context);
     this.wordpalJSONSerializer = new WordpalJSONSerializer(this.context);
     this.settings = loadSettings();
   }

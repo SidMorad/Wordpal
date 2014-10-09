@@ -95,7 +95,6 @@ public class WordListFragment extends ListFragment {
             getLayoutInflater().
             inflate(R.layout.emptylist_item, null);
       }
-      System.out.println(w.id() + " " + w.getQuestion() + " " + w.score() + " " + w.getAnswerDe());
 
       // If we weren't given a view, inflate one
       if (convertView == null) {
@@ -114,6 +113,7 @@ public class WordListFragment extends ListFragment {
         Button faButton = (Button) convertView.findViewById(R.id.fa_id);
         faButton.setTag(w.getAnswerFa());
         final TextView answerTextView = (TextView) convertView.findViewById(R.id.answer_id);
+        final TextView exitButton = (TextView) convertView.findViewById(R.id.exit_id);
 
         Button iKnowBtn = (Button) convertView.findViewById(R.id.i_know_id);
         iKnowBtn.setOnClickListener(new OnClickListener() {
@@ -124,11 +124,13 @@ public class WordListFragment extends ListFragment {
               Toast.makeText(getActivity(), "One round is done.", Toast.LENGTH_LONG).show();
               wordCollection = databaseManager.currentCollection();
               answerTextView.setText("Break time, have a tea!");
+              exitButton.setVisibility(View.VISIBLE);
             } else {
               wordz.clear();
               wordz.add(nextOne);
               // Note wordAdapter.notifyDataSetChanged(); didn't work as expected, so we use next line
               setListAdapter(wordAdapter);
+              exitButton.setVisibility(View.INVISIBLE);
             }
           }
         });
@@ -142,10 +144,12 @@ public class WordListFragment extends ListFragment {
               Toast.makeText(getActivity(), "One round is done.", Toast.LENGTH_LONG).show();
               wordCollection = databaseManager.currentCollection();
               answerTextView.setText("Break time, have a tea!");
+              exitButton.setVisibility(View.VISIBLE);
             } else {
               wordz.clear();
               wordz.add(nextOne);
               setListAdapter(wordAdapter);
+              exitButton.setVisibility(View.INVISIBLE);
             }
           }
         });

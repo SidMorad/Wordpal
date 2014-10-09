@@ -57,7 +57,7 @@ public class CollectionAdapter extends BaseAdapter {
     }
 
     if (collections.get(position).active()) {
-      gridView.setBackgroundColor(Color.CYAN);
+      gridView.setBackgroundColor(Color.GREEN);
     }
     else {
       gridView.setBackgroundColor(Color.WHITE);
