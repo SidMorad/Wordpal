@@ -14,7 +14,32 @@ public class WordCollectionsInMemory {
     originalCollections.add(wordTrainerLesson1());
     originalCollections.add(wordTrainerLesson2());
     originalCollections.add(wordTrainerLesson3());
+    originalCollections.add(wordTrainerLesson4());
     return originalCollections;
+  }
+
+  public static WordCollection wordTrainerLesson4() {
+    TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
+    w.add(new Word("Where are we?", "Wo sind wir?", "ما کجاییم؟", 0));
+    w.add(new Word("We are at school.", "Wir sind in der Schule.", "ما در مدرسه هستیم.", 0));
+    w.add(new Word("We are having class/a lesson.", "Wir haben Unterricht.", "ما یک کلاس داریم", 0));
+    w.add(new Word("Those are the school children.", "Das sind die Schüler.", "آنها بچه‌های مدرسه هستند. ", 0));
+    w.add(new Word("That is the teacher", "Das ist die Lehrerin.", "آن یک معلم است.", 0));
+    w.add(new Word("That is class.", "Das ist die Klasse.", "آن کلاس است.", 0));
+    w.add(new Word("What are we doing?", "Was machen wir?", "ما چه کار می‌کنیم؟", 0));
+    w.add(new Word("We are learning.", "Wir lernen.", "ما یاد می‌گیریم", 0));
+    w.add(new Word("We are learning a language.", "Wir lernen eine Sprache.", "ما یک زبان یاد می‌گیریم.", 0));
+    w.add(new Word("I learn English.", "Ich lerne Englisch.", "من انگلیسی یاد می‌گیرم.", 0));
+    w.add(new Word("You learn Spanish.", "Du lernst Spanisch.", "تو اسپانیایی یاد می‌گیری.", 0));
+    w.add(new Word("He learns German.", "Er lernt Deutsch.", "او آلمانی یاد می‌گیرد.", 0));
+    w.add(new Word("We learn French.", "Wir lernen Französisch.", "ما فرانسه یاد می‌گیریم.", 0));
+    w.add(new Word("You all learn Italian.", "Ihr lernt Italienisch.", "شما اتالیایی یاد می‌گیرید.", 0));
+    w.add(new Word("They learn Russian.", "Sie lernen Russisch.", "آنها روسی یاد می‌گیرند.", 0));
+    w.add(new Word("Learning languages is interesting.", "Sprachen lernen ist interessant.", "یادگیری زبان‌ها جالب است.", 0));
+    w.add(new Word("We want to understand people.", "Wir wollen Menschen verstehen.", "ما می‌خواهیم مردم رو بفهمیم.", 0));
+    w.add(new Word("We want to speak with people.", "Wir wollen mit Menschen sprechen.", "ما می‌خواهیم با مردم صحبت کنیم.", 0));
+    return new WordCollection(0,
+      "Wordtrainer Lesson4: At school - In der Schule", w, true);
   }
 
   public static WordCollection wordTrainerLesson3() {

@@ -10,7 +10,7 @@ description : In this story we are suppose to provide simple implementation
  for Wordpal application, for example some questions and answers could be
  hard coded. In another words, we want to have look-and-feel for this app.
 
-story point :
+story point : 1 + 1 + 1 + 1 + 1 + 1 + 1 = 7
 
 comments : [
   : "2014-09-03 story was told.",

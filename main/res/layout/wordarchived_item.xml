@@ -1,0 +1,43 @@
+<TableLayout
+  xmlns:android = 'http://schemas.android.com/apk/res/android'
+  android:layout_width = "match_parent"
+  android:layout_height = "match_parent"
+  >
+
+<TableRow
+  android:layout_width = 'match_parent'
+  android:layout_height = 'match_parent'>
+
+  <TextView
+    android:id = '@+id/question_id'
+    android:gravity = 'center'
+    android:layout_span = '2'
+    android:layout_width = 'match_parent'
+    android:layout_height = 'match_parent'
+    android:layout_weight="1"
+    android:textSize="@dimen/font_large"
+    android:paddingBottom="10dp"
+   />
+</TableRow>
+<TableRow
+  android:layout_width = 'match_parent'
+  android:layout_height = 'match_parent'>
+
+  <TextView
+    android:id="@+id/score_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:textSize="@dimen/font_medium"
+    />
+  <Button
+    android:id="@+id/reset_to_zero_id"
+    android:text="@string/reset_to_zero"
+    android:textSize="@dimen/font_medium"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    />
+</TableRow>
+</TableLayout>

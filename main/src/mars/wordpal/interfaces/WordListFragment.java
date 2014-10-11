@@ -7,9 +7,11 @@ import mars.wordpal.domain.model.Word;
 import mars.wordpal.domain.model.WordCollection;
 import mars.wordpal.infrastructure.DatabaseManager;
 import mars.wordpal.interfaces.settings.SettingsActivity;
+import mars.wordpal.interfaces.viewarchived.ViewArchivedActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.util.SparseArray;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -32,7 +34,7 @@ public class WordListFragment extends ListFragment {
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    getActivity().setTitle(R.string.word_list);
+    getActivity().setTitle(R.string.wordpal);
     databaseManager = new DatabaseManager(getActivity());
     wordCollection = databaseManager.currentCollection();
     wordz = new ArrayList<Word>();
@@ -52,6 +54,10 @@ public class WordListFragment extends ListFragment {
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     switch(item.getItemId()) {
+    case R.id.menu_item_view_archived:
+      Intent i1 = new Intent(getActivity(), ViewArchivedActivity.class);
+      startActivityForResult(i1, 1);
+      return true;
     case R.id.menu_item_select_collection:
       Intent i = new Intent(getActivity(), SelectCollectionActivity.class);
       startActivityForResult(i, 0);
@@ -102,64 +108,81 @@ public class WordListFragment extends ListFragment {
           getActivity().
           getLayoutInflater().
           inflate(R.layout.wordlist_item, null);
-
-        // Configure the view for this wordz
-        TextView questionTextView = (TextView) convertView.findViewById(R.id.question_id);
-        questionTextView.setText(w.getQuestion());
-        TextView scoreTextView = (TextView) convertView.findViewById(R.id.score_id);
-        scoreTextView.setText("Score : " + w.score());
-        Button deButton = (Button) convertView.findViewById(R.id.de_id);
-        deButton.setTag(w.getAnswerDe());
-        Button faButton = (Button) convertView.findViewById(R.id.fa_id);
-        faButton.setTag(w.getAnswerFa());
-        final TextView answerTextView = (TextView) convertView.findViewById(R.id.answer_id);
-        final TextView exitButton = (TextView) convertView.findViewById(R.id.exit_id);
-
-        Button iKnowBtn = (Button) convertView.findViewById(R.id.i_know_id);
-        iKnowBtn.setOnClickListener(new OnClickListener() {
-          public void onClick(View v) {
-            databaseManager.updateWordScorePlus(w);
-            Word nextOne = wordCollection.nextOne();
-            if (nextOne == null) {
-              Toast.makeText(getActivity(), "One round is done.", Toast.LENGTH_LONG).show();
-              wordCollection = databaseManager.currentCollection();
-              answerTextView.setText("Break time, have a tea!");
-              exitButton.setVisibility(View.VISIBLE);
-            } else {
-              wordz.clear();
-              wordz.add(nextOne);
-              // Note wordAdapter.notifyDataSetChanged(); didn't work as expected, so we use next line
-              setListAdapter(wordAdapter);
-              exitButton.setVisibility(View.INVISIBLE);
-            }
-          }
-        });
-        Button notSureBtn = (Button) convertView.findViewById(R.id.not_sure_id);
-        notSureBtn.setOnClickListener(new OnClickListener() {
-          @Override
-          public void onClick(View v) {
-            databaseManager.updateWordScoreMines(w);
-            Word nextOne = wordCollection.nextOne();
-            if (nextOne == null) {
-              Toast.makeText(getActivity(), "One round is done.", Toast.LENGTH_LONG).show();
-              wordCollection = databaseManager.currentCollection();
-              answerTextView.setText("Break time, have a tea!");
-              exitButton.setVisibility(View.VISIBLE);
-            } else {
-              wordz.clear();
-              wordz.add(nextOne);
-              setListAdapter(wordAdapter);
-              exitButton.setVisibility(View.INVISIBLE);
-            }
-          }
-        });
       }
+      // Configure the view for this wordz
+      TextView questionTextView = ViewHolder.get(convertView, R.id.question_id);
+      questionTextView.setText(w.getQuestion());
+      TextView scoreTextView = ViewHolder.get(convertView, R.id.score_id);
+      scoreTextView.setText("Score : " + w.score());
+      Button deButton = ViewHolder.get(convertView, R.id.de_id);
+      deButton.setTag(w.getAnswerDe());
+      Button faButton = ViewHolder.get(convertView, R.id.fa_id);
+      faButton.setTag(w.getAnswerFa());
+      final TextView answerTextView = ViewHolder.get(convertView, R.id.answer_id);
+      final TextView exitButton = ViewHolder.get(convertView, R.id.exit_id);
+
+      Button iKnowBtn = ViewHolder.get(convertView, R.id.i_know_id);
+      iKnowBtn.setOnClickListener(new OnClickListener() {
+        public void onClick(View v) {
+          databaseManager.updateWordScorePlus(w);
+          Word nextOne = wordCollection.nextOne();
+          if (nextOne == null) {
+            Toast.makeText(getActivity(), "One round is done.", Toast.LENGTH_LONG).show();
+            wordCollection = databaseManager.currentCollection();
+            answerTextView.setText("Break time, have a tea!");
+            exitButton.setVisibility(View.VISIBLE);
+          } else {
+            wordz.clear();
+            wordz.add(nextOne);
+            // Note wordAdapter.notifyDataSetChanged(); didn't work as expected, so we use next line
+            setListAdapter(wordAdapter);
+            exitButton.setVisibility(View.INVISIBLE);
+          }
+        }
+      });
+      Button notSureBtn = ViewHolder.get(convertView, R.id.not_sure_id);
+      notSureBtn.setOnClickListener(new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          databaseManager.updateWordScoreMines(w);
+          Word nextOne = wordCollection.nextOne();
+          if (nextOne == null) {
+            Toast.makeText(getActivity(), "One round is done.", Toast.LENGTH_LONG).show();
+            wordCollection = databaseManager.currentCollection();
+            answerTextView.setText("Break time, have a tea!");
+            exitButton.setVisibility(View.VISIBLE);
+          } else {
+            wordz.clear();
+            wordz.add(nextOne);
+            setListAdapter(wordAdapter);
+            exitButton.setVisibility(View.INVISIBLE);
+          }
+        }
+      });
       return convertView;
     }
 
     @Override
     public boolean isEnabled(int position) {
       return false;
+    }
+  }
+
+  private static class ViewHolder {
+
+    @SuppressWarnings("unchecked")
+    public static <T extends View> T get(View view, int id) {
+      SparseArray<View> viewHolder = (SparseArray<View>) view.getTag();
+      if (viewHolder == null) {
+        viewHolder = new SparseArray<View>();
+        view.setTag(viewHolder);
+      }
+      View childView = viewHolder.get(id);
+      if (childView == null) {
+        childView = view.findViewById(id);
+        viewHolder.put(id, childView);
+      }
+      return (T) childView;
     }
   }
 

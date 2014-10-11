@@ -90,4 +90,5 @@ public class SelectCollectionFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
   }
+
 }

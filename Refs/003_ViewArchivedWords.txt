@@ -1,0 +1,20 @@
+number : 3
+
+status : inprogress
+
+type : Story/featue
+
+subject : View archived words
+
+description : Users want to see which words are archived. Note: any words
+ with score >= rightNumber will consider as archived. In another words,those
+ words that are not visiable to users anymore, sholud be visiable in this
+ archived list. Moreover users should be able to move any words from archived
+ list to their usual word list(reset score to zero).
+
+story point : 1 = 1
+
+comments : [
+  : "2014-10-09 story was told.",
+  : "",
+]

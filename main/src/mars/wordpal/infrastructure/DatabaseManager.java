@@ -57,6 +57,14 @@ public class DatabaseManager {
     wordpalDatabaseHelper.updateWordScoreMines(word);
   }
 
+  public ArrayList<Word> wordArchived() {
+    return wordpalDatabaseHelper.wordArchived(rightNumber());
+  }
+
+  public void resetWordScoreToZero(Word word) {
+    wordpalDatabaseHelper.resetWordScoreToZero(word);
+  }
+
   public Settings loadSettings() {
     try {
       return settings = wordpalJSONSerializer.loadSettings();

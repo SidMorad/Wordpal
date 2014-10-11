@@ -180,13 +180,13 @@ public class WordpalDatabaseHelper extends SQLiteOpenHelper {
     }
   }
 
-  public void updateWordScoreMines(Word selectedWord) {
-    Word current = selectWord(selectedWord.id());
+  public void updateWordScoreMines(Word word) {
+    Word current = selectWord(word.id());
     if (current.score() != 0) {
       current.minesScore1Down();
       ContentValues cv = new ContentValues();
       cv.put(SCORE, current.score());
-      getWritableDatabase().update(TABLE_WORD, cv, ID + "=?", new String[] { selectedWord.id() + ""});
+      getWritableDatabase().update(TABLE_WORD, cv, ID + "=?", new String[] { word.id() + ""});
     }
   }
 
@@ -210,6 +210,35 @@ public class WordpalDatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
       }
       return word;
+  }
+
+  public ArrayList<Word> wordArchived(int maxScore) {
+    Cursor cursor = getReadableDatabase().query(false, TABLE_WORD,
+        new String[] {ID, QUESTION, SCORE, ANSWERDE, ANSWERFA},
+        " score>=?", new String[] {maxScore + ""},
+        null, null, null, null);
+      ArrayList<Word> wordz = new ArrayList<Word>();
+      if (cursor.moveToFirst()) {
+        do {
+          wordz.add(new Word(
+            cursor.getInt(cursor.getColumnIndexOrThrow(ID)),
+            cursor.getString(cursor.getColumnIndexOrThrow(QUESTION)),
+            cursor.getInt(cursor.getColumnIndexOrThrow(SCORE)),
+            cursor.getString(cursor.getColumnIndexOrThrow(ANSWERDE)),
+            cursor.getString(cursor.getColumnIndexOrThrow(ANSWERFA))
+          ));
+        } while (cursor.moveToNext());
+      }
+      if (cursor != null && !cursor.isClosed()) {
+        cursor.close();
+      }
+      return wordz;
+  }
+
+  public void resetWordScoreToZero(Word word) {
+    ContentValues cv = new ContentValues();
+    cv.put(SCORE, 0);
+    getWritableDatabase().update(TABLE_WORD, cv, ID + "=?", new String[] { word.id() + ""});
   }
 
 }

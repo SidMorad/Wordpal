@@ -12,23 +12,23 @@
  <application
   android:name="mars.wordpal.interfaces.ApplicationStartup"
   android:icon="@drawable/ic_launcher"
-  android:label="@string/app_name"
+  android:label="@string/wordpal"
   android:theme="@style/AppTheme"
   android:allowBackup="true"
   android:supportsRtl = 'false'>
   <activity
    android:name="mars.wordpal.interfaces.WordListActivity"
-   android:label="@string/word_list"
+   android:label="@string/wordpal"
    android:screenOrientation="landscape">
    <intent-filter>
     <action android:name="android.intent.action.MAIN" />
     <category android:name="android.intent.category.LAUNCHER" />
    </intent-filter>
   </activity>
-  <activity
+<!--<activity
    android:name="mars.wordpal.interfaces.WordPagerActivity"
    android:label="@string/word_details" >
-  </activity>
+  </activity> -->
   <activity
    android:name="mars.wordpal.interfaces.SelectCollectionActivity"
    android:label="@string/select_collection" >
@@ -39,6 +39,13 @@
   <activity
    android:name="mars.wordpal.interfaces.settings.SettingsActivity"
    android:label="@string/settings" >
+   <meta-data
+     android:name="android.support.PARENT_ACTIVITY"
+     android:value="mars.wordpal.interfaces.WordListActivity"/>
+  </activity>
+  <activity
+   android:name="mars.wordpal.interfaces.viewarchived.ViewArchivedActivity"
+   android:label="@string/view_archived" >
    <meta-data
      android:name="android.support.PARENT_ACTIVITY"
      android:value="mars.wordpal.interfaces.WordListActivity"/>

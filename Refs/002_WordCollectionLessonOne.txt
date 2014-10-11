@@ -13,7 +13,7 @@ description : Wordpal works with Word collections. Each collection contains
  selected as default. In this story we are trying to target these different
  scenarios.
 
-story point :
+story point : 1 + 1 = 2
 
 comments : [
   : "2014-10-6 story was told.",
