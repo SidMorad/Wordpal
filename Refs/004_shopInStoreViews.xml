@@ -1,0 +1,21 @@
+number : 4
+
+status : open
+
+type : Story/feature
+
+subject : Shop in store views
+
+description : In this story we want to implement shop in store. First users
+ will see list of available WordCollections, then they select one to see it's
+ content, in the same page, users could click 'Buy' button if they wish to
+ buy selected WordCollection. This program is planned to be publish in
+ cafebazzar.ir market, Therefore we will use their internal payment gateway
+ for implementing payment action part.
+
+story point :
+
+comments : [
+  : "",
+  : "",
+]

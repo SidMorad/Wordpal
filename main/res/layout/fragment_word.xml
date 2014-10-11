@@ -24,7 +24,7 @@
     android:id = '@+id/not_sure_id'
     android:text = '@string/not_sure'
     android:onClick = 'notSure'
-    android:background = '@drawable/button_notsure'
+    android:background = '@drawable/button_notsure_normal'
     android:paddingRight = '4dp'
     style = '@style/button_at_wordlist'
     />
@@ -33,7 +33,7 @@
     android:id = '@+id/i_know_id'
     android:text = '@string/i_know'
     android:onClick = 'iKnow'
-    android:background = '@drawable/button_iknow'
+    android:background = '@drawable/button_iknow_normal'
     android:paddingLeft = '4dp'
     style = '@style/button_at_wordlist'
     />
@@ -48,7 +48,7 @@
     android:text = '@string/de'
     android:onClick = 'deToast'
     android:textColor = '@color/white'
-    android:background = '@drawable/button_lang'
+    android:background = '@drawable/button_lang_normal'
     android:paddingRight = '4dp'
     style = '@style/button_at_wordlist'
     />
@@ -58,7 +58,7 @@
     android:text = '@string/fa'
     android:onClick = 'faToast'
     android:textColor = '@color/white'
-    android:background = '@drawable/button_lang'
+    android:background = '@drawable/button_lang_normal'
     android:paddingLeft = '4dp'
     style = '@style/button_at_wordlist'
     />

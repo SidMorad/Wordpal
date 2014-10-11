@@ -1,5 +1,5 @@
-Wordpal is your pal for learning English, German and Farsi languages in
-one place.
+Wordpal is your pal for learning and memorizing new words in German, English
+and Farsi.
 
 Wordpal uses Android platform and tools for development and packaging
 final product.

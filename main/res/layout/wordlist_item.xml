@@ -1,7 +1,8 @@
 <TableLayout
   xmlns:android = 'http://schemas.android.com/apk/res/android'
   android:layout_width = 'match_parent'
-  android:layout_height = 'match_parent'>
+  android:layout_height = 'match_parent'
+  android:stretchColumns="*">
 
 <TableRow
   android:gravity = 'center'
@@ -31,7 +32,7 @@
     android:id = '@+id/de_id'
     android:text = '@string/de'
     android:onClick = 'deToast'
-    android:textColor = '@color/white'
+    android:textColor = '@drawable/button_text_color'
     android:background = '@drawable/button_lang'
     android:paddingRight = '4dp'
     android:layout_weight="0.25"
@@ -41,6 +42,7 @@
   <Button
     android:id = '@+id/not_sure_id'
     android:text = '@string/not_sure'
+    android:textColor = '@drawable/button_text_color'
     android:background = '@drawable/button_notsure'
     android:paddingRight = '4dp'
     android:layout_weight="0.25"
@@ -50,8 +52,8 @@
   <Button
     android:id = '@+id/i_know_id'
     android:text = '@string/i_know'
+    android:textColor = '@drawable/button_text_color'
     android:background = '@drawable/button_iknow'
-    android:paddingLeft = '4dp'
     android:layout_weight="0.25"
     style = '@style/button_at_wordlist'
     />
@@ -60,7 +62,7 @@
     android:id = '@+id/fa_id'
     android:text = '@string/fa'
     android:onClick = 'faToast'
-    android:textColor = '@color/white'
+    android:textColor = '@drawable/button_text_color'
     android:background = '@drawable/button_lang'
     android:paddingLeft = '4dp'
     android:layout_weight="0.25"
@@ -90,6 +92,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textSize="@dimen/font_large"
+    android:gravity="center"
     />
 </TableRow>
 <TableRow
@@ -99,6 +102,7 @@
   <Button
     android:id="@+id/exit_id"
     android:text="@string/exit"
+    android:gravity="center"
     android:onClick="exitActivity"
     android:textSize="@dimen/font_medium"
     android:visibility="invisible"
