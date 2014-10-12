@@ -24,6 +24,10 @@ public class DatabaseManager {
     this.settings = loadSettings();
   }
 
+  public WordCollection selectCollection(String name) {
+    return wordpalDatabaseHelper.selectCollection(name);
+  }
+
   public long insertCollection(WordCollection wordCollection) {
     return wordpalDatabaseHelper.insertCollection(wordCollection);
   }

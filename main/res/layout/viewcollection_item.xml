@@ -1,0 +1,15 @@
+<TableLayout
+  xmlns:android = 'http://schemas.android.com/apk/res/android'
+  android:layout_width = "match_parent"
+  android:layout_height = "match_parent"
+  android:stretchColumns="*"
+  >
+<TableRow>
+  <TextView
+    android:id = "@+id/question_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="@dimen/font_medium"
+    />
+</TableRow>
+</TableLayout>

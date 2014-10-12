@@ -57,13 +57,18 @@ public class WordpalDatabaseHelper extends SQLiteOpenHelper {
         + "answerfa varchar(255), "
         + "score integer, "
         + "cid integer references collection(id))");
+    // remember to add 'create table' commands here too.
   }
 
   @Override
   public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-/*  db.rawQuery("DROP TABLE word", null);
-    db.rawQuery("DROP TABLE collection", null);
-    onCreate(db);*/
+    switch (oldVersion) {
+    case 1:
+      ;
+      // we want later updates, so no break statement here.
+    case 2:
+      ;
+    }
   }
 
   public long insertCollection(WordCollection wordCollection) {

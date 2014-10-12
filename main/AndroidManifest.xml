@@ -9,6 +9,9 @@
   android:minSdkVersion="8"
   android:targetSdkVersion="19"
   />
+
+ <uses-permission android:name="com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR"/>
+
  <application
   android:name="mars.wordpal.interfaces.ApplicationStartup"
   android:icon="@drawable/ic_launcher"
@@ -50,6 +53,19 @@
      android:name="android.support.PARENT_ACTIVITY"
      android:value="mars.wordpal.interfaces.WordListActivity"/>
   </activity>
+  <activity
+   android:name="mars.wordpal.interfaces.shopinstore.ShopInStoreActivity"
+   android:label="@string/shop_in_store" >
+   <meta-data
+     android:name="android.support.PARENT_ACTIVITY"
+     android:value="mars.wordpal.interfaces.WordListActivity"/>
+  </activity>
+  <activity
+   android:name="mars.wordpal.interfaces.shopinstore.ViewCollectionActivity"
+   android:label="@string/view_collection" >
+   <meta-data
+     android:name="android.support.PARENT_ACTIVITY"
+     android:value="mars.wordpal.interfaces.shopinstore.ShopInStoreActivity"/>
+  </activity>
  </application>
-
 </manifest>

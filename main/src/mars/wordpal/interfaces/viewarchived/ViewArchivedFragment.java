@@ -31,7 +31,7 @@ public class ViewArchivedFragment extends ListFragment {
     setHasOptionsMenu(true);
     databaseManager = new DatabaseManager(getActivity());
     wordArchived = databaseManager.wordArchived();
-    viewArchivedAdapter = new ViewArchivedAdapter(wordArchived, R.layout.wordarchived_item);
+    viewArchivedAdapter = new ViewArchivedAdapter(wordArchived);
     setListAdapter(viewArchivedAdapter);
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -63,7 +63,7 @@ public class ViewArchivedFragment extends ListFragment {
   private class ViewArchivedAdapter extends BaseAdapter {
     private ArrayList<Word> wordz;
 
-    public ViewArchivedAdapter(ArrayList<Word> wordz, int resourceId) {
+    public ViewArchivedAdapter(ArrayList<Word> wordz) {
       this.wordz = wordz;
     }
 

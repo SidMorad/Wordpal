@@ -1,0 +1,23 @@
+<TableLayout
+  xmlns:android = 'http://schemas.android.com/apk/res/android'
+  android:layout_width = 'match_parent'
+  android:layout_height = 'match_parent'
+  android:stretchColumns="*"
+  >
+<TableRow>
+  <TextView
+    android:id="@+id/collection_name_id"
+    android:layout_width = "wrap_content"
+    android:layout_height= "wrap_content"
+    android:textSize="@dimen/font_medium"
+    android:padding="20dp"
+    />
+</TableRow>
+<TableRow>
+  <ListView
+    android:id = "@+id/collection_content_list_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    />
+</TableRow>
+</TableLayout>

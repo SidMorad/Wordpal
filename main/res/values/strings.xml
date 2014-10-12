@@ -16,5 +16,8 @@
  <string name = 'shop_in_store'>Shop in store</string>
  <string name = 'view_archived'>View archived</string>
  <string name = 'reset_to_zero'>Reset to 0</string>
+ <string name = 'buy'>Buy</string>
+ <string name = 'view'>View</string>
+ <string name = 'view_collection'>View collection</string>
 
 </resources>

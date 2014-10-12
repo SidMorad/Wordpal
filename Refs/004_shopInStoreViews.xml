@@ -1,6 +1,6 @@
 number : 4
 
-status : open
+status : inprogress
 
 type : Story/feature
 
@@ -13,7 +13,7 @@ description : In this story we want to implement shop in store. First users
  cafebazzar.ir market, Therefore we will use their internal payment gateway
  for implementing payment action part.
 
-story point :
+story point : 1 = 1
 
 comments : [
   : "",

@@ -7,6 +7,7 @@ import mars.wordpal.domain.model.Word;
 import mars.wordpal.domain.model.WordCollection;
 import mars.wordpal.infrastructure.DatabaseManager;
 import mars.wordpal.interfaces.settings.SettingsActivity;
+import mars.wordpal.interfaces.shopinstore.ShopInStoreActivity;
 import mars.wordpal.interfaces.viewarchived.ViewArchivedActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -54,17 +55,21 @@ public class WordListFragment extends ListFragment {
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     switch(item.getItemId()) {
+    case R.id.menu_item_shop_in_store:
+      Intent i1 = new Intent(getActivity(), ShopInStoreActivity.class);
+      startActivityForResult(i1, 0);
+      return true;
     case R.id.menu_item_view_archived:
-      Intent i1 = new Intent(getActivity(), ViewArchivedActivity.class);
-      startActivityForResult(i1, 1);
+      Intent i2 = new Intent(getActivity(), ViewArchivedActivity.class);
+      startActivityForResult(i2, 0);
       return true;
     case R.id.menu_item_select_collection:
-      Intent i = new Intent(getActivity(), SelectCollectionActivity.class);
-      startActivityForResult(i, 0);
+      Intent i3 = new Intent(getActivity(), SelectCollectionActivity.class);
+      startActivityForResult(i3, 0);
       return true;
     case R.id.menu_item_settings:
-      Intent i2 = new Intent(getActivity(), SettingsActivity.class);
-      startActivityForResult(i2, 2);
+      Intent i4 = new Intent(getActivity(), SettingsActivity.class);
+      startActivityForResult(i4, 0);
       return true;
     default:
       return super.onOptionsItemSelected(item);

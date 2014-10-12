@@ -9,15 +9,48 @@ import mars.wordpal.domain.model.WordCollection;
 
 public class WordCollectionsInMemory {
 
+  public static WordCollection get(String collectionName) {
+    for (WordCollection wc : originalCollections()) {
+      if (wc.name().equalsIgnoreCase(collectionName)) {
+        return wc;
+      }
+    }
+    return null;
+  }
+
   public static ArrayList<WordCollection> originalCollections() {
     ArrayList<WordCollection> originalCollections = new ArrayList<WordCollection>();
     originalCollections.add(wordTrainerLesson1());
     originalCollections.add(wordTrainerLesson2());
     originalCollections.add(wordTrainerLesson3());
     originalCollections.add(wordTrainerLesson4());
+    originalCollections.add(wordTrainerLesson5());
     return originalCollections;
   }
 
+  public static WordCollection wordTrainerLesson5() {
+    TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
+    w.add(new Word("John is from London.", "John ist aus London.", "جان اهل لندن است", 0));
+    w.add(new Word("London is in Great Britain.", "London liegt in Großbritannien.", "لندن در انگلستان کبیر است.", 0));
+    w.add(new Word("He speaks English.", "Er spricht Englisch.", "او انگلیسی صحبت می‌کند.", 0));
+    w.add(new Word("Maria is from Madrid.", "Maria ist aus Madrid.", "ماریا اهل مادرید است.", 0));
+    w.add(new Word("Madrid is in Spain.", "Madrid liegt in Spanien.", "مادرید در اسپانیا است.", 0));
+    w.add(new Word("She speaks Spanish.", "Sie spricht Spanisch.", "او اسپانیایی صحبت می‌کند.", 0));
+    w.add(new Word("Peter and Martha are from Berlin.", "Peter und Martha sind aus Berlin.", "پیتر و مارتا اهل برلین هستند.", 0));
+    w.add(new Word("Berlin is in Germany.", "Berlin liegt in Deutschland.", "برلین در آلمان است.", 0));
+    w.add(new Word("Do both of you speak German?", "Sprecht ihr beide Deutsch?", "آیا هر دو شما آلمانی صحبت می‌کنید؟", 0));
+    w.add(new Word("London is a capital city.", "London ist eine Hauptstadt.", "شهر لندن پایتخت است.", 0));
+    w.add(new Word("Madrid and Berlin are also capital cities.", "Madrid und Berlin sind auch Hauptstädte.", "شهرهای مادرید و برلین هم پایتخت هستند.", 0));
+    w.add(new Word("Capital cities are big and noisy.", "Die Hauptstädte sind groß und laut.", "شهرهای پایتخت بزرگ و پر سروصدا هستند.", 0));
+    w.add(new Word("France is in Europe.", "Frankreich liegt in Europa.", "فرانسه در اروپا است.", 0));
+    w.add(new Word("Egypt is in Africa.", "Ägypten liegt in Afrika.", "مصر در آفریقا است.", 0));
+    w.add(new Word("Japan is in Asia", "Japan liegt in Asien.", "ژاپن در آسیا است.", 0));
+    w.add(new Word("Canada is in North America.", "Kanada liegt in Nordamerika.", "کانادا در آمریکای شمالی است.", 0));
+    w.add(new Word("Panama is in Central America.", "Panama liegt in Mittelamerika.", "پاناما در آمریکای مرکزی است.", 0));
+    w.add(new Word("Brazil is in South America.", "Brasilien liegt in Südamerika.", "برزیل در آمریکای جنوبی است.", 0));
+    return new WordCollection(0,
+      "Wordtrainer Lessson 5: Countries and Languages - Länder und Sprachen", w, true);
+  }
   public static WordCollection wordTrainerLesson4() {
     TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
     w.add(new Word("Where are we?", "Wo sind wir?", "ما کجاییم؟", 0));
