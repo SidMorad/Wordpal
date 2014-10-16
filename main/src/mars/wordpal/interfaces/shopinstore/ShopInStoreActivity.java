@@ -29,7 +29,7 @@ public class ShopInStoreActivity extends SingleFragmentActivity {
     super.onCreate(arg);
     databaseManager = new DatabaseManager(this);
 
-    String base64EncodedPublicKey = "TEMPORARY_TEXT";
+    String base64EncodedPublicKey = "MIHNMA0GCSqGSIb3DQEBAQUAA4G7ADCBtwKBrwCstESTXiKD/vr1Rxy6NaA1D6QLu2bhkrDZ5srkP0jMuhZWdjFde33+twUb55DHJAXTd/NzkdKQV9Faa6kbZ2S5qZuTeIJ++R2IO85M9f12BWDKgVyVJ/CSLyulWjp0uYDzgv+4PcB673tmKmOZWuuzSYa8LVNYuuD2A+/vfOeYTewYgiMG7CxvuBWOct+LWK4GW0hiY9oyI3B2ntXNJKL0ICEjDutfymzB57FCVaUCAwEAAQ==";  
     Log.d(TAG, "Creating IAB helper.");
     iabHelper = new IabHelper(this, base64EncodedPublicKey);
 
