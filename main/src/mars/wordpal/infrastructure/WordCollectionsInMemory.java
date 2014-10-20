@@ -51,13 +51,13 @@ public class WordCollectionsInMemory {
     TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
     w.add(new Word("Did you miss the bus?", "Hast du den Bus verpasst?", "آیا اتوبوس را از دست دادی؟", 0));
     w.add(new Word("I waited for you for half an hour.", "Ich habe eine halbe Stunde auf dich gewartet.", "من نیم ساعت هست که منتظرت هستم. ", 0));
-    w.add(new Word("Don-t you have a mobile phone with you?", "Hast du kein Handy bei dir?", "آیا تلفن همراه همراهت نداری؟", 0));
+    w.add(new Word("Don't you have a mobile phone with you?", "Hast du kein Handy bei dir?", "آیا تلفن همراه همراهت نداری؟", 0));
     w.add(new Word("Be punctual next time!", "Sein das nächsten Mal Pünktlich!", "دفعه بعد وقت‌ شناس باش!", 0));
     w.add(new Word("Take a taxi next time!", "Nehmen das nächsten Mal ein Taxi!", "دفعه بعد یک تاکسی بگیر!", 0));
     w.add(new Word("Take an umbrella with you next time!", "Nehmen das nächsten Mal einen Regenschirm mit!", "دفعه بعد با خودت یک چتر همراه داشته باش!", 0));
     w.add(new Word("I have the day off tomorrow.", "Morgen habe ich frei.", "من فردا مرخصی دارم.", 0));
     w.add(new Word("Shall we meet tomorrow?", "Wollen wir uns morgen treffen?", "فردا دیدار داشته باشیم؟", 0));
-    w.add(new Word("I am sorry, I can-t make it tomorrow.", "Tut mir leid, morgen geht es bei mir nicht.", "من متاسفم، من فردا نمی‌تونم بیام.", 0));
+    w.add(new Word("I am sorry, I can't make it tomorrow.", "Tut mir leid, morgen geht es bei mir nicht.", "من متاسفم، من فردا نمی‌تونم بیام.", 0));
     w.add(new Word("Do you already have plans for this weekend?", "Hast du dieses Wochenende schon etwas für?", "در حال حاضر برنامه‌ای برای این آخر هفته داری؟", 0));
     w.add(new Word("Or do you already have an appointment?", "Oder bist du schon Verabredung?", "یا اینکه شما در حال حاضر یک قرار ملاقات دارید؟", 0));
     w.add(new Word("I suggest we meet on the weekend.", "Ich schlage vor, wir treffen uns am Wochenende.", "من پیشنهاد می‌کنم، ما آخر هفته ملاقات داشته باشیم.", 0));
@@ -99,10 +99,10 @@ public class WordCollectionsInMemory {
     TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
     w.add(new Word("Do you smoke?", "Rauchen Sie?", "آیا سیگار می‌کشید؟", 0));
     w.add(new Word("I used to.", "Früher ja.", "قبلا می‌کشیدم.", 0));
-    w.add(new Word("But I donot smoke anymore.", "Aber jetzt rauche ich nicht mehr.", "اما دیگه سیگار نمی‌کشم.", 0));
+    w.add(new Word("But I don't smoke anymore.", "Aber jetzt rauche ich nicht mehr.", "اما دیگه سیگار نمی‌کشم.", 0));
     w.add(new Word("Does it disturb you if I smoke?", "Stört es Sie, wenn ich rauche?", "آیا سیگار کشیدن من مزاحم شماست؟", 0));
     w.add(new Word("No, absolutely not.", "Nien, absolut nicht.", "نه، مطلقا نه. ", 0));
-    w.add(new Word("It does not disturb me.", "Das stört mich nicht.", "اون مزاحم من نیست. ", 0));
+    w.add(new Word("It doesn't disturb me.", "Das stört mich nicht.", "اون مزاحم من نیست. ", 0));
     w.add(new Word("Will you drink something?", "Trinken Sie etwas?", "آیا چیزی می‌نوشید؟", 0));
     w.add(new Word("A brandy?", "Einen Kognak?", "یک براندی؟", 0));
     w.add(new Word("No, preferably a beer.", "Nein, lieber ein Bier.", "خیر، ترجیحا یک آبجو.", 0));
@@ -111,7 +111,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("But now, we are in holiday.", "Aber jetzt machen wir hier Urlaub.", "اما الان، ما در تعطیلات هستیم.", 0));
     w.add(new Word("It is so hot!", "Das ist so heiß!", "خیلی گرم است.", 0));
     w.add(new Word("Yes, today it is really hot.", "Ja, heute ist es wirklich heiß.", "بله، امروز واقعا گرم است.", 0));
-    w.add(new Word("Let-s go to the balcony.", "Gehen wir auf den Balkon.", "بریم به بالکن.", 0));
+    w.add(new Word("Let's go to the balcony.", "Gehen wir auf den Balkon.", "بریم به بالکن.", 0));
     w.add(new Word("There is a party here tomorrow.", "Morgen gibt es hier eine Partei.", "در اینجا فردا یک پارتی هست.", 0));
     w.add(new Word("Are you also coming?", "Kommen Sie auch?", "شما هم می‌آیید؟", 0));
     w.add(new Word("Yes, we also been invited.", "Ja, wir sind auch eingeladen.", "بله، ما هم دعوت شده‌ایم.", 0));
@@ -200,7 +200,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("My husband is washing the car.", "Mein mann wäscht das Auto.", "شوهر من در حال شستن ماشین است.", 0));
     w.add(new Word("The children are cleaning the bicycles.", "Die Kinder putzen die Fahrräder.", "بچه‌ها در حال شستن دوچرخه‌ها هستند.", 0));
     w.add(new Word("Grandma is watering the flowers.", "Oma Gießt die Blumen.", "مادر بزرگ به گل‌ها آب می‌دهد.", 0));
-    w.add(new Word("The children are cleaning up the children-s room.", "Die Kinder Reinigung das Kinderzimmer auf.", "بچه‌ها در حال تمیز کردن اتاقشون هستند.", 0));
+    w.add(new Word("The children are cleaning up the children's room.", "Die Kinder Reinigung das Kinderzimmer auf.", "بچه‌ها در حال تمیز کردن اتاقشون هستند.", 0));
     w.add(new Word("My husband is tidying up his desk.", "Mein Mann fräumen seinen Schreibtisch auf.", "شوهر من در حال مرتب کردن میزش است.", 0));
     w.add(new Word("I am putting the laundry in the washing machine.", "Ich setze die Wäsche in der Waschmaschine.", "من در حال گذاشتن لباس‌های در ماشین لباسشویی هستم.", 0));
     w.add(new Word("I am hanging up the laundry.", "Ich hänge die Wäsche auf.", "من لباس‌ها را آویزان می‌کنم.", 0));
@@ -400,8 +400,8 @@ public class WordCollectionsInMemory {
     w.add(new Word("That is Martha.", "Das ist Martha.", "آن مارتا است.", 0));
     w.add(new Word("Martha is a secretary.", "Martha ist Sekretärin.", "مارتا یک منشی است.", 0));
     w.add(new Word("Peter and Martha are friends.", "Peter und Martha sind Freunde.", "پیتر و مارتا با هم دوست هستند.", 0));
-    w.add(new Word("Peter is Martha-s friend.", "Peter ist der Freund von Martha.", "پیتر دوست مارتا است.", 0));
-    w.add(new Word("Martha is Peter-s friend.", "Martha ist die Freundin von Peter.", "مارتا دوست پیتر است.", 0));
+    w.add(new Word("Peter is Martha's friend.", "Peter ist der Freund von Martha.", "پیتر دوست مارتا است.", 0));
+    w.add(new Word("Martha is Peter's friend.", "Martha ist die Freundin von Peter.", "مارتا دوست پیتر است.", 0));
     return new WordCollection(0,
       "Wordtrainer Lesson 10: Yesterday, today, tomorrow - Gestern, heute, morgen", w, true);
   }
@@ -435,18 +435,18 @@ public class WordCollectionsInMemory {
     w.add(new Word("Excuse me!", "Entschuldigen Sie!", "ببخشید!", 0));
     w.add(new Word("What time is it, please?", "Wie viel Uhr ist es, bitte?", "ساعت چند است، لطفا؟", 0));
     w.add(new Word("Thank you very much.", "Danke vielmals.", "خیلی ممنونم.", 0));
-    w.add(new Word("It is one o-clock.", "Es ist ein Uhr.", "ساعت یک است.", 0));
-    w.add(new Word("It is two o-clock.", "Es ist zwei Uhr.", "ساعت دو است.", 0));
-    w.add(new Word("It is three o-clock.", "Es ist drei Uhr.", "ساعت سه است.", 0));
-    w.add(new Word("It is four o-clock.", "Es ist vier Uhr.", "ساعت چهار است.", 0));
-    w.add(new Word("It is five o-clock.", "Es ist fünf Uhr.", "ساعت پنج است.", 0));
-    w.add(new Word("It is six o-clock.", "Es ist sechs Uhr.", "ساعت شش است.", 0));
-    w.add(new Word("It is seven o-clock.", "Es ist sieben Uhr.", "ساعت هفت است.", 0));
-    w.add(new Word("It is eight o-clock.", "Es ist acht Uhr.", "ساعت هشت است.", 0));
-    w.add(new Word("It is nine o-clock.", "Es ist neun Uhr.", "ساعت نه است.", 0));
-    w.add(new Word("It is ten o-clock.", "Es ist zehn Uhr.", "ساعت ده است.", 0));
-    w.add(new Word("It is eleven o-clock.", "Es ist elf Uhr.", "ساعت یازده است.", 0));
-    w.add(new Word("It is twelve o-clock.", "Es ist zwölf Uhr.", "ساعت دوازده است.", 0));
+    w.add(new Word("It is one o'clock.", "Es ist ein Uhr.", "ساعت یک است.", 0));
+    w.add(new Word("It is two o'clock.", "Es ist zwei Uhr.", "ساعت دو است.", 0));
+    w.add(new Word("It is three o'clock.", "Es ist drei Uhr.", "ساعت سه است.", 0));
+    w.add(new Word("It is four o'clock.", "Es ist vier Uhr.", "ساعت چهار است.", 0));
+    w.add(new Word("It is five o'clock.", "Es ist fünf Uhr.", "ساعت پنج است.", 0));
+    w.add(new Word("It is six o'clock.", "Es ist sechs Uhr.", "ساعت شش است.", 0));
+    w.add(new Word("It is seven o'clock.", "Es ist sieben Uhr.", "ساعت هفت است.", 0));
+    w.add(new Word("It is eight o'clock.", "Es ist acht Uhr.", "ساعت هشت است.", 0));
+    w.add(new Word("It is nine o'clock.", "Es ist neun Uhr.", "ساعت نه است.", 0));
+    w.add(new Word("It is ten o'clock.", "Es ist zehn Uhr.", "ساعت ده است.", 0));
+    w.add(new Word("It is eleven o'clock.", "Es ist elf Uhr.", "ساعت یازده است.", 0));
+    w.add(new Word("It is twelve o'clock.", "Es ist zwölf Uhr.", "ساعت دوازده است.", 0));
     w.add(new Word("A minute has sixty seconds.", "Eine Minute hat sechzig Sekunden.", "هر دقیقه شصد ثانیه دارد.", 0));
     w.add(new Word("An hour has sixty minutes.", "Eine Stunde hat sechzig Minuten.", "هر ساعت شصد دقیقه دارد.", 0));
     w.add(new Word("A day has twenty-four hours.", "Ein Tag hat vierundzwanzig Stunden.", "هر روز بیست و چهار ساعت دارد.", 0));
@@ -550,7 +550,7 @@ public class WordCollectionsInMemory {
     TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
     w.add(new Word("Hi!", "Hallo!", "سلام!", 0));
     w.add(new Word("Hello!", "Guten Tag!", "سلام!", 0));
-    w.add(new Word("How are you?", "Wie geht es?", "چطوری؟", 0));
+    w.add(new Word("How are you?", "Wie geht's?", "چطوری؟", 0));
     w.add(new Word("Do you come from Europe?", "Kommen Sie aus Europa?", "شما از اروپا می‌آیید؟", 0));
     w.add(new Word("Do you come from America?", "Kommen Sie aus Amerika?", "شما از آمریکا می‌آیید؟", 0));
     w.add(new Word("Do you come from Asia?", "Kommen Sie aus Asien?", "شما از آسیا می‌آیید؟", 0));
