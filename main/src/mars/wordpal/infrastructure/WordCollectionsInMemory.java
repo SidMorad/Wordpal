@@ -39,7 +39,132 @@ public class WordCollectionsInMemory {
     originalCollections.add(wordTrainerLesson17());
     originalCollections.add(wordTrainerLesson18());
     originalCollections.add(wordTrainerLesson19());
+    originalCollections.add(wordTrainerLesson20());
+    originalCollections.add(wordTrainerLesson21());
+    originalCollections.add(wordTrainerLesson22());
+    originalCollections.add(wordTrainerLesson23());
+    originalCollections.add(wordTrainerLesson24());
     return originalCollections;
+  }
+
+  public static WordCollection wordTrainerLesson24() {
+    TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
+    w.add(new Word("Did you miss the bus?", "Hast du den Bus verpasst?", "آیا اتوبوس را از دست دادی؟", 0));
+    w.add(new Word("I waited for you for half an hour.", "Ich habe eine halbe Stunde auf dich gewartet.", "من نیم ساعت هست که منتظرت هستم. ", 0));
+    w.add(new Word("Don-t you have a mobile phone with you?", "Hast du kein Handy bei dir?", "آیا تلفن همراه همراهت نداری؟", 0));
+    w.add(new Word("Be punctual next time!", "Sein das nächsten Mal Pünktlich!", "دفعه بعد وقت‌ شناس باش!", 0));
+    w.add(new Word("Take a taxi next time!", "Nehmen das nächsten Mal ein Taxi!", "دفعه بعد یک تاکسی بگیر!", 0));
+    w.add(new Word("Take an umbrella with you next time!", "Nehmen das nächsten Mal einen Regenschirm mit!", "دفعه بعد با خودت یک چتر همراه داشته باش!", 0));
+    w.add(new Word("I have the day off tomorrow.", "Morgen habe ich frei.", "من فردا مرخصی دارم.", 0));
+    w.add(new Word("Shall we meet tomorrow?", "Wollen wir uns morgen treffen?", "فردا دیدار داشته باشیم؟", 0));
+    w.add(new Word("I am sorry, I can-t make it tomorrow.", "Tut mir leid, morgen geht es bei mir nicht.", "من متاسفم، من فردا نمی‌تونم بیام.", 0));
+    w.add(new Word("Do you already have plans for this weekend?", "Hast du dieses Wochenende schon etwas für?", "در حال حاضر برنامه‌ای برای این آخر هفته داری؟", 0));
+    w.add(new Word("Or do you already have an appointment?", "Oder bist du schon Verabredung?", "یا اینکه شما در حال حاضر یک قرار ملاقات دارید؟", 0));
+    w.add(new Word("I suggest we meet on the weekend.", "Ich schlage vor, wir treffen uns am Wochenende.", "من پیشنهاد می‌کنم، ما آخر هفته ملاقات داشته باشیم.", 0));
+    w.add(new Word("Shall we have picnic?", "Wollen wir Picknick machen?", "ما پیک نیک داشته باشیم؟", 0));
+    w.add(new Word("Shall we go to the beach?", "Wollen wir an den Strand fahren?", "ما به ساحل برویم؟", 0));
+    w.add(new Word("Shall we go to the mountains?", "Wollen wir in die Berge fahren?", "ما به کوهستان برویم؟", 0));
+    w.add(new Word("I will pick you up at the office.", "Ich hole dich von Büro ab.", "من شما را از دفتر سوار می‌کنم.", 0));
+    w.add(new Word("I will pick you up at home.", "Ich hole dich von zu Hause ab.", "من شما را از خانه سوار می‌کنم.", 0));
+    w.add(new Word("I will pick you up at the bus stop.", "Ich hole dich an der Bushaltestelle ab.", "من شما را از ایستگاه اتوبوس سوار می‌کنم.", 0));
+    return new WordCollection(0,
+      "Wordtrainer Lesson 24: Appointment - Verabredung", w, true);
+  }
+
+  public static WordCollection wordTrainerLesson23() {
+    TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
+    w.add(new Word("Where did you learn Spanish?", "Wo haben Sie Spanisch gelernt?", "اسپانیای کجا یاد گرفتی؟", 0));
+    w.add(new Word("Can you also speak Portuguese?", "Können Sie auch Portugiesisch?", "آیا پرتقالی هم می‌تونی صحبت کنی؟", 0));
+    w.add(new Word("Yes, and I also speak some Italian.", "Ja, und ich kann auch etwas Italienisch.", "بله، و ایتالیایی هم یک مقدار صحبت می‌کنم.", 0));
+    w.add(new Word("I think you speak very well.", "Ich finde, Sie sprechen sehr gut.", "به نظر من شما خیلی خوب صحبت می‌کنید.", 0));
+    w.add(new Word("The languages are quite similar.", "Die Sprachen sind ziemlich ähnlich.", "زبان‌ها کاملا شبیه هم هستند.", 0));
+    w.add(new Word("I can understand them well.", "Ich kann sie gut verstehen.", "من آنها را به خوبی درک می‌کنم.", 0));
+    w.add(new Word("But speaking and writing is difficult.", "Aber Sprechen und Schreiben ist schwierig.", "اما صحبت کردن و نوشتن مشکل است.", 0));
+    w.add(new Word("I still make many mistakes.", "Ich mache noch viele Fehler.", "من هنوز خیلی اشتباه می‌کنم.", 0));
+    w.add(new Word("Please correct me each time.", "Bitte Korrigieren Sie mich immer.", "لطفا من رو هر بار تصحیح کنید.", 0));
+    w.add(new Word("Your pronunciation is very good.", "Ihre Ausspreche ist ganz gut.", "تلفظ شما خیلی خوب است.", 0));
+    w.add(new Word("You only have a slight accent.", "Sie haben einen klein Akzent.", "شما فقط کمی لهجه دارید.", 0));
+    w.add(new Word("You speak English fluently.", "Sie sprechen fließend Englisch.", "شما انگلیسی را روان صحبت می‌کنید.", 0));
+    w.add(new Word("What is your native language?", "Was ist Ihre Muttersprache?", "زبان مادری شما چیست؟", 0));
+    w.add(new Word("Are you taking a language course?", "Machen Sie einen Sprachkurs?", "آیا شما به دوره آموزش زبان می‌روید؟ ", 0));
+    w.add(new Word("Which textbook are you using?", "Welches Lehrbuch benutzen Sie?", "از کدام کتاب درسی استفاده می نمایید؟", 0));
+    w.add(new Word("I forgot the title.", "Ich vergaß den Titel.", "من عنوان رو فراموش کردم.", 0));
+    w.add(new Word("Do you have good time in classroom?", "Haben Sie gute Zeit mit Klassenzimmer?", "آیا اوقات خوشی در کلاس درس دارید؟", 0));
+    w.add(new Word("Yes, we had fun.", "Ja, wir hatten Spaß.", "بله، برای ما سرگرم کننده است.", 0));
+    return new WordCollection(0,
+      "Wordtrainer Lesson 23: Learning foreign languages - Fremdsprachen lernen", w, true);
+  }
+
+  public static WordCollection wordTrainerLesson22() {
+    TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
+    w.add(new Word("Do you smoke?", "Rauchen Sie?", "آیا سیگار می‌کشید؟", 0));
+    w.add(new Word("I used to.", "Früher ja.", "قبلا می‌کشیدم.", 0));
+    w.add(new Word("But I donot smoke anymore.", "Aber jetzt rauche ich nicht mehr.", "اما دیگه سیگار نمی‌کشم.", 0));
+    w.add(new Word("Does it disturb you if I smoke?", "Stört es Sie, wenn ich rauche?", "آیا سیگار کشیدن من مزاحم شماست؟", 0));
+    w.add(new Word("No, absolutely not.", "Nien, absolut nicht.", "نه، مطلقا نه. ", 0));
+    w.add(new Word("It does not disturb me.", "Das stört mich nicht.", "اون مزاحم من نیست. ", 0));
+    w.add(new Word("Will you drink something?", "Trinken Sie etwas?", "آیا چیزی می‌نوشید؟", 0));
+    w.add(new Word("A brandy?", "Einen Kognak?", "یک براندی؟", 0));
+    w.add(new Word("No, preferably a beer.", "Nein, lieber ein Bier.", "خیر، ترجیحا یک آبجو.", 0));
+    w.add(new Word("Do you travel a lot?", "Reisen Sie viel?", "آیا زیاد به سفر می‌روید؟", 0));
+    w.add(new Word("Yes, mostly on business trips.", "Ja, meistens auf Geschäftsreisen.", "بله، اکثرا سفرهای کاری.", 0));
+    w.add(new Word("But now, we are in holiday.", "Aber jetzt machen wir hier Urlaub.", "اما الان، ما در تعطیلات هستیم.", 0));
+    w.add(new Word("It is so hot!", "Das ist so heiß!", "خیلی گرم است.", 0));
+    w.add(new Word("Yes, today it is really hot.", "Ja, heute ist es wirklich heiß.", "بله، امروز واقعا گرم است.", 0));
+    w.add(new Word("Let-s go to the balcony.", "Gehen wir auf den Balkon.", "بریم به بالکن.", 0));
+    w.add(new Word("There is a party here tomorrow.", "Morgen gibt es hier eine Partei.", "در اینجا فردا یک پارتی هست.", 0));
+    w.add(new Word("Are you also coming?", "Kommen Sie auch?", "شما هم می‌آیید؟", 0));
+    w.add(new Word("Yes, we also been invited.", "Ja, wir sind auch eingeladen.", "بله، ما هم دعوت شده‌ایم.", 0));
+    return new WordCollection(0,
+      "Wordtrainer Lesson 22: Small Talk 3 - Small Talk 3", w, true);
+  }
+
+  public static WordCollection wordTrainerLesson21() {
+    TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
+    w.add(new Word("Where do you come from?", "Woher kommen Sie?", "اهل کجایی؟", 0));
+    w.add(new Word("From Basel.", "Aus Basel.", "اهل بازل.", 0));
+    w.add(new Word("Basel is in Switzerland.", "Basel liegt in der Schweiz.", "بازل در سوئیس است.", 0));
+    w.add(new Word("May I introduce Mr.Miller?", "Darf ich Ihnen Herrn Miller vorstellen?", "اجازه دارم آقای میلر رو معرفی کنم؟", 0));
+    w.add(new Word("He is a foreigner.", "Er ist Ausländer.", "او خارجی است.", 0));
+    w.add(new Word("He speaks several languages.", "Er spricht mehrere Sprachen.", "او به چندین زبان صحبت می‌کند.", 0));
+    w.add(new Word("Are you here for the first time?", "Sind Sie zum ersten Mal hier?", "آیا شما برای اولین بار اینجا هستید؟", 0));
+    w.add(new Word("No, I was here once last year.", "Nein, ich war hier einmal im letzten Jahr.", "نه، یکبار سال پیش اینجا بودم.", 0));
+    w.add(new Word("Only, for a week.", "Nur, seit einer Woche.", "فقط برای یک هفته.", 0));
+    w.add(new Word("How do you like it here?", "Wie gefällt es Ihnen hier?", "از اینجا خوشتون می‌آید؟", 0));
+    w.add(new Word("A lot. The people are nice.", "Sher gut. Die Leute sind nett.", "بسیار زیاد، مردمش خوب هستند. ", 0));
+    w.add(new Word("And I like the shopping center too.", "Und ich mag das Einkaufszentrum auch.", "و من از مرکز خرید هم خوشم آمده است.", 0));
+    w.add(new Word("What is your profession?", "Was sind sie von Beruf?", "کار شما چیست؟", 0));
+    w.add(new Word("I am a translator.", "Ich bin Übersetzer.", "من مترجم هستم.", 0));
+    w.add(new Word("I translates books.", "Ich übersetze Bücher.", "من کتاب ترجمه می‌کنم.", 0));
+    w.add(new Word("Are you alone here?", "Sind Sie allein hier?", "آیا شما اینجا تنها هستید؟", 0));
+    w.add(new Word("No, my wife is also here.", "Nein, meine Frau ist auch hier.", "خیر، همسرم هم اینجاست.", 0));
+    w.add(new Word("And those are my two children.", "Und dort sind meine beiden Kinder.", "و آنها دو فرزند من هستند.", 0));
+    return new WordCollection(0,
+      "Wordtrainer Lesson 21: Small Talk 2 - Small Talk 2", w, true);
+  }
+
+  public static WordCollection wordTrainerLesson20() {
+    TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
+    w.add(new Word("Make yourself comfortable!", "Machen Sie es sich bequem!", "راحت باش!", 0));
+    w.add(new Word("Please, feel right at home!", "Fühlen Sie sich wie zu Hause!", "لطفا، فکر کن خانه خودته!", 0));
+    w.add(new Word("What would you like to drink?", "Was möchten Sie trinken?", "نوشیدنی چی دوست داری؟", 0));
+    w.add(new Word("Do you like music?", "Lieben Sie Musik?", "به موزیک علاقه داری؟", 0));
+    w.add(new Word("I like classical music.", "Ich mag klassische Musik.", "من به موزیک کلاسیک علاقه دارم.", 0));
+    w.add(new Word("This is my CD.", "Das ist meine CD.", "این سی‌دی من است.", 0));
+    w.add(new Word("Do you play a musical instrument?", "Spielen Sie Musikinstrument?", "آیا شما یک ساز موسیقی می‌زنید؟", 0));
+    w.add(new Word("This is my guitar.", "Das ist meine Gitarre.", "این گیتار من است.", 0));
+    w.add(new Word("Do you like to sing?", "Singen Sie gern?", "آیا به خواندن علاقه دارید؟", 0));
+    w.add(new Word("Do you have children?", "Haben Sie Kinder?", "آیا بچه دارید؟", 0));
+    w.add(new Word("Do you have a dog?", "Haben Sie einen Hund?", "آیا یک سگ دارید؟", 0));
+    w.add(new Word("Do you have a cat?", "Haben Sie eine Katze?", "آیا یک گربه دارید؟", 0));
+    w.add(new Word("These are my books.", "Diese sind meine Bücher.", "اینها کتاب‌های من هستند.", 0));
+    w.add(new Word("I am currently reading this book.", "Ich lese zur Zeit dieses Buch.", "من در حال حاضر این کتاب را می‌خوانم.", 0));
+    w.add(new Word("What do you like to read?", "Was lesen Sie gern?", "شما دوست دارید چه بخوانید؟", 0));
+    w.add(new Word("Do you like to go to concerts?", "Gehen Sie gern ins Konzerten?", "آیا دوست دارید به کنسرت بروید؟", 0));
+    w.add(new Word("Do you like to go to the theater?", "Gehen Sie gern ins theater?", "آیا دوست دارید به تئاتر بروید", 0));
+    w.add(new Word("Do you like to the opera?", "Gehen Sie gern in die Oper?", "آیا دوست دارید به اپرا بروید؟", 0));
+    return new WordCollection(0,
+      "Wordtrainer Lesson 20: Small Talk 1 - Small Talk 1", w, true);
   }
 
   public static WordCollection wordTrainerLesson19() {
@@ -310,18 +435,18 @@ public class WordCollectionsInMemory {
     w.add(new Word("Excuse me!", "Entschuldigen Sie!", "ببخشید!", 0));
     w.add(new Word("What time is it, please?", "Wie viel Uhr ist es, bitte?", "ساعت چند است، لطفا؟", 0));
     w.add(new Word("Thank you very much.", "Danke vielmals.", "خیلی ممنونم.", 0));
-    w.add(new Word("It is one o'clock.", "Es ist ein Uhr.", "ساعت یک است.", 0));
-    w.add(new Word("It is two o'clock.", "Es ist zwei Uhr.", "ساعت دو است.", 0));
-    w.add(new Word("It is three o'clock.", "Es ist drei Uhr.", "ساعت سه است.", 0));
-    w.add(new Word("It is four o'clock.", "Es ist vier Uhr.", "ساعت چهار است.", 0));
-    w.add(new Word("It is five o'clock.", "Es ist fünf Uhr.", "ساعت پنج است.", 0));
-    w.add(new Word("It is six o'clock.", "Es ist sechs Uhr.", "ساعت شش است.", 0));
-    w.add(new Word("It is seven o'clock.", "Es ist sieben Uhr.", "ساعت هفت است.", 0));
-    w.add(new Word("It is eight o'clock.", "Es ist acht Uhr.", "ساعت هشت است.", 0));
-    w.add(new Word("It is nine o'clock.", "Es ist neun Uhr.", "ساعت نه است.", 0));
-    w.add(new Word("It is ten o'clock.", "Es ist zehn Uhr.", "ساعت ده است.", 0));
-    w.add(new Word("It is eleven o'clock.", "Es ist elf Uhr.", "ساعت یازده است.", 0));
-    w.add(new Word("It is twelve o'clock.", "Es ist zwölf Uhr.", "ساعت دوازده است.", 0));
+    w.add(new Word("It is one o-clock.", "Es ist ein Uhr.", "ساعت یک است.", 0));
+    w.add(new Word("It is two o-clock.", "Es ist zwei Uhr.", "ساعت دو است.", 0));
+    w.add(new Word("It is three o-clock.", "Es ist drei Uhr.", "ساعت سه است.", 0));
+    w.add(new Word("It is four o-clock.", "Es ist vier Uhr.", "ساعت چهار است.", 0));
+    w.add(new Word("It is five o-clock.", "Es ist fünf Uhr.", "ساعت پنج است.", 0));
+    w.add(new Word("It is six o-clock.", "Es ist sechs Uhr.", "ساعت شش است.", 0));
+    w.add(new Word("It is seven o-clock.", "Es ist sieben Uhr.", "ساعت هفت است.", 0));
+    w.add(new Word("It is eight o-clock.", "Es ist acht Uhr.", "ساعت هشت است.", 0));
+    w.add(new Word("It is nine o-clock.", "Es ist neun Uhr.", "ساعت نه است.", 0));
+    w.add(new Word("It is ten o-clock.", "Es ist zehn Uhr.", "ساعت ده است.", 0));
+    w.add(new Word("It is eleven o-clock.", "Es ist elf Uhr.", "ساعت یازده است.", 0));
+    w.add(new Word("It is twelve o-clock.", "Es ist zwölf Uhr.", "ساعت دوازده است.", 0));
     w.add(new Word("A minute has sixty seconds.", "Eine Minute hat sechzig Sekunden.", "هر دقیقه شصد ثانیه دارد.", 0));
     w.add(new Word("An hour has sixty minutes.", "Eine Stunde hat sechzig Minuten.", "هر ساعت شصد دقیقه دارد.", 0));
     w.add(new Word("A day has twenty-four hours.", "Ein Tag hat vierundzwanzig Stunden.", "هر روز بیست و چهار ساعت دارد.", 0));
@@ -425,7 +550,7 @@ public class WordCollectionsInMemory {
     TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
     w.add(new Word("Hi!", "Hallo!", "سلام!", 0));
     w.add(new Word("Hello!", "Guten Tag!", "سلام!", 0));
-    w.add(new Word("How are you?", "Wie geht's?", "چطوری؟", 0));
+    w.add(new Word("How are you?", "Wie geht es?", "چطوری؟", 0));
     w.add(new Word("Do you come from Europe?", "Kommen Sie aus Europa?", "شما از اروپا می‌آیید؟", 0));
     w.add(new Word("Do you come from America?", "Kommen Sie aus Amerika?", "شما از آمریکا می‌آیید؟", 0));
     w.add(new Word("Do you come from Asia?", "Kommen Sie aus Asien?", "شما از آسیا می‌آیید؟", 0));
