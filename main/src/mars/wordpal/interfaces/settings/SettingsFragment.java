@@ -43,14 +43,12 @@ public class SettingsFragment extends Fragment {
       public void afterTextChanged(Editable s) {
         if (isInt(editText.getText().toString())) {
           Integer rightNumber = Integer.valueOf(editText.getText().toString());
-          if (rightNumber < 4) {
-            Toast.makeText(v.getContext(), "Should be higher than 3", Toast.LENGTH_SHORT).show();
-          }
-          else {
-            Settings settings = databaseManager.loadSettings();
-            settings.setRightNumber(rightNumber);
-            databaseManager.storeSettings(settings);
-          }
+          Settings settings = databaseManager.loadSettings();
+          settings.setRightNumber(rightNumber);
+          databaseManager.storeSettings(settings);
+        }
+        else {
+          Toast.makeText(v.getContext(), "Should be valid number", Toast.LENGTH_SHORT).show();
         }
       }
     });

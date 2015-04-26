@@ -44,7 +44,57 @@ public class WordCollectionsInMemory {
     originalCollections.add(wordTrainerLesson22());
     originalCollections.add(wordTrainerLesson23());
     originalCollections.add(wordTrainerLesson24());
+    originalCollections.add(wordTrainerLesson25());
+    originalCollections.add(wordTrainerLesson26());
     return originalCollections;
+  }
+
+  public static WordCollection wordTrainerLesson26() {
+    TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
+    w.add(new Word("Do you see the tower there?", "Siehst du dort den Turm?", "آیا آنجا برج را می‌بینی؟", 0));
+    w.add(new Word("Do you see the mountain there?", "Siehst du dort den Berg?", "آیا آنجا کوه را می‌بینی؟", 0));
+    w.add(new Word("Do you see the village there?", "Siehst du dort das Dorf?", "آیا آنجا روستا را می‌بینی؟", 0));
+    w.add(new Word("Do you see the river there?", "Siehst du dort den Fluß?", "آیا آنجا رودخانه را می‌بینی؟", 0));
+    w.add(new Word("Do you see the bridge there?", "Siehst du dort die Brücke?", "آیا آنجا پل را می‌بینی؟", 0));
+    w.add(new Word("Do you see the lake there?", "Siehst du dort den See?", "آیا آنجا دریاچه را می‌بینی؟", 0));
+    w.add(new Word("I like that bird.", "Der Vogel da gefällt mir.", "من آن پرنده را دوست دارم.", 0));
+    w.add(new Word("I like that tree.", "Die Baum da gefällt mir.", "من آن درخت را دوست دارم.", 0));
+    w.add(new Word("I like this stone here.", "Der Stein hier gefällt mir.", "من این سنگ را اینجا دوست دارم.", 0));
+    w.add(new Word("I like that park.", "Der Park da gefällt mir.", "من آن پارک را دوست دارم.", 0));
+    w.add(new Word("I like that garden.", "Der Garten da gefällt mir.", "من آن باغ را دوست دارم.", 0));
+    w.add(new Word("I like this flower here.", "Die Blumen hier gefällt mir.", "من این گل را اینجا دوست دارم.", 0));
+    w.add(new Word("I find that pretty.", "Ich finde das hübsch.", "من آن را زیبا یافتم.", 0));
+    w.add(new Word("I find that interesting.", "Ich finde das interessant.", "من آن را جالب یافتم.", 0));
+    w.add(new Word("I find that gorgeous.", "Ich finde das wunderschön.", "من آن را زرق و برق‌دار یافتم.", 0));
+    w.add(new Word("I find that ugly.", "Ich finde, dass häßlich.", "من آن را زشت یافتم.", 0));
+    w.add(new Word("I find that boring.", "Ich finde das langweilig.", "من آن را خسته کننده یافتم.", 0));
+    w.add(new Word("I find that terrible.", "Ich finde dass furchtbar.", "من آن را وحشتناک یافتم.", 0));
+    return new WordCollection(0,
+      "Wordtrainer Lesson 26: In nature - In der Natur", w, true);
+  }
+
+  public static WordCollection wordTrainerLesson25() {
+    TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
+    w.add(new Word("I would like to go to the station.", "Ich möchte zum Bahnhof.", "من می‌خواهم به ایستگاه بروم.", 0));
+    w.add(new Word("I would like to go to the airport.", "Ich möchte zum Flughafen.", "من می‌خواهم به فرودگاه بروم.", 0));
+    w.add(new Word("I would like to go to the city center.", "Ich möchte ins Stadtzentrum.", "من می‌خواهم به مرکز شهر بروم.", 0));
+    w.add(new Word("How do I get to the station?", "Wie komme ich zum Bahnhof? ", "چگونه به ایستگاه بروم؟", 0));
+    w.add(new Word("How do I get to the airport?", "Wie komme ich zum Flughafen?", "چگونه به فرودگاه بروم؟", 0));
+    w.add(new Word("How do I get to the city center?", "Wie komme ich ins Stadtzentrum?", "چگونه به مرکز شهر بروم؟", 0));
+    w.add(new Word("I need a taxi.", "Ich brauche ein Taxi.", "من به یک تاکسی نیاز دارم.", 0));
+    w.add(new Word("I need a city map.", "Ich brauche einen Stadtplan.", "من به نقشه شهر نیاز دارم.", 0));
+    w.add(new Word("I need a hotel.", "Ich brauche ein Hotel.", "من به یک هتل نیاز دارم.", 0));
+    w.add(new Word("I would like to rent a car.", "Ich möchte ein Auto mieten.", "من مایلم که یک ماشین کرایه کنم.", 0));
+    w.add(new Word("Here is my credit card.", "Hier ist meine Kreditkarte.", "این کارت اعتباری من است.", 0));
+    w.add(new Word("Here is my license.", "Hier ist meinen Führeschein.", "این گواهینامه من است.", 0));
+    w.add(new Word("What is there to see in the city?", "Was gibt es in der Stadt zu sehen?", "در شهر جاهای دیدنی وجود دارد؟", 0));
+    w.add(new Word("Go to the old city.", "Gehen Sie in die Altstadt.", "برو به شهر قدیمی.", 0));
+    w.add(new Word("Go to the river.", "Gehen Sie zum Fluß.", "برو به رودخانه.", 0));
+    w.add(new Word("Go to the harbour.", "Gehen Sie zum Hafen.", "برو به بندر.", 0));
+    w.add(new Word("Go on a harbour tour.", "Machen Sie eine Hafenrundfahrt.", "برو به تور بندر.", 0));
+    w.add(new Word("Did you know, other interesting places?", "Wußten Sie, andere interessante Orte?", "آیا مکان‌های جالب دیگر می‌شناسید؟", 0));
+    return new WordCollection(0,
+      "Wordtrainer Lesson 25: In the city - In der Stadt", w, true);
   }
 
   public static WordCollection wordTrainerLesson24() {

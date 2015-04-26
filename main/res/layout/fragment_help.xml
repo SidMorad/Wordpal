@@ -1,0 +1,71 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="4dp">
+<TableLayout
+  android:layout_width="wrap_content"
+  android:layout_height="fill_parent"
+  android:gravity="start"
+  android:stretchColumns="*">
+
+<TableRow>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/help_introduction"
+    android:textSize="@dimen/font_medium"
+    android:linksClickable="true"
+    />
+</TableRow>
+<TableRow>
+  <ImageView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="start"
+    android:src="@drawable/wordpal_01_snapshot_first_page"
+    />
+</TableRow>
+<TableRow>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/help_snapshot_first_page"
+    android:textSize="@dimen/font_medium"/>
+</TableRow>
+<TableRow>
+  <ImageView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="start"
+    android:src="@drawable/wordpal_02_snapshot_menu"/>
+</TableRow>
+<TableRow>
+  <ImageView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="start"
+    android:src="@drawable/wordpal_03_snapshot_settings"/>
+</TableRow>
+<TableRow>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/help_snapshot_select_collection"
+    android:textSize="@dimen/font_medium"/>
+</TableRow>
+<TableRow>
+  <ImageView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="start"
+    android:src="@drawable/wordpal_04_snapshot_select_collection"/>
+</TableRow>
+<TableRow>
+  <ImageView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="start"
+    android:src="@drawable/wordpal_05_snapshot_shop_in_store"/>
+</TableRow>
+</TableLayout>
+</ScrollView>

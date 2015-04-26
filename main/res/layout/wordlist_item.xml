@@ -2,7 +2,7 @@
   xmlns:android = 'http://schemas.android.com/apk/res/android'
   android:layout_width = 'match_parent'
   android:layout_height = 'match_parent'
-  android:stretchColumns="*">
+  android:stretchColumns = '*'>
 
 <TableRow
   android:gravity = 'center'
@@ -14,8 +14,8 @@
     android:layout_span = '1'
     android:layout_width = 'match_parent'
     android:layout_height = 'match_parent'
-    android:textSize="@dimen/font_large"
-    android:paddingBottom="20dp"
+    android:textSize = '@dimen/font_large'
+    android:paddingBottom = '20dp'
    />
 </TableRow>
 
@@ -24,9 +24,9 @@
   android:gravity = 'center'
   android:paddingBottom = '16dp'>
 <LinearLayout
-  android:layout_weight="1"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
+  android:layout_weight = '1'
+  android:layout_width = 'match_parent'
+  android:layout_height = 'match_parent'>
 
   <Button
     android:id = '@+id/de_id'
@@ -35,7 +35,8 @@
     android:textColor = '@drawable/button_text_color'
     android:background = '@drawable/button_lang'
     android:paddingRight = '4dp'
-    android:layout_weight="0.25"
+    android:drawableTop = '@drawable/ic_mail'
+    android:layout_weight = '0.25'
     style = '@style/button_at_wordlist'
     />
 
@@ -45,7 +46,8 @@
     android:textColor = '@drawable/button_text_color'
     android:background = '@drawable/button_notsure'
     android:paddingRight = '4dp'
-    android:layout_weight="0.25"
+    android:layout_weight = '0.25'
+    android:drawableTop = '@drawable/ic_gas_station'
     style = '@style/button_at_wordlist'
     />
 
@@ -54,10 +56,11 @@
     android:text = '@string/i_know'
     android:textColor = '@drawable/button_text_color'
     android:background = '@drawable/button_iknow'
-    android:layout_weight="0.25"
+    android:layout_weight = '0.25'
+    android:drawableTop= '@drawable/ic_airplane'
     style = '@style/button_at_wordlist'
-    />
-
+   />
+   
   <Button
     android:id = '@+id/fa_id'
     android:text = '@string/fa'
@@ -65,9 +68,11 @@
     android:textColor = '@drawable/button_text_color'
     android:background = '@drawable/button_lang'
     android:paddingLeft = '4dp'
-    android:layout_weight="0.25"
+    android:layout_weight = '0.25'
+    android:drawableTop = '@drawable/ic_mail'
     style = '@style/button_at_wordlist'
     />
+
 </LinearLayout>
 </TableRow>
 <TableRow
@@ -76,10 +81,10 @@
   android:paddingTop = '16dp'>
 
   <TextView
-    android:id="@+id/score_id"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:textSize="@dimen/font_medium"
+    android:id = '@+id/score_id'
+    android:layout_width = 'match_parent'
+    android:layout_height = 'match_parent'
+    android:textSize = '@dimen/font_medium'
     />
 </TableRow>
 <TableRow
@@ -88,11 +93,11 @@
   android:paddingTop = '16dp'>
 
   <TextView
-    android:id="@+id/answer_id"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:textSize="@dimen/font_large"
-    android:gravity="center"
+    android:id='@+id/answer_id'
+    android:layout_width = 'match_parent'
+    android:layout_height = 'match_parent'
+    android:textSize = '@dimen/font_large'
+    android:gravity = 'center'
     />
 </TableRow>
 <TableRow
@@ -100,14 +105,14 @@
   android:gravity = 'center'>
 
   <Button
-    android:id="@+id/exit_id"
-    android:text="@string/exit"
-    android:gravity="center"
-    android:onClick="exitActivity"
-    android:textSize="@dimen/font_medium"
-    android:visibility="invisible"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id = '@+id/exit_id'
+    android:text = '@string/exit'
+    android:gravity = 'center'
+    android:onClick = 'exitActivity'
+    android:textSize = '@dimen/font_medium'
+    android:visibility = 'invisible'
+    android:layout_width = 'match_parent'
+    android:layout_height = 'match_parent'
     />
 </TableRow>
 </TableLayout>

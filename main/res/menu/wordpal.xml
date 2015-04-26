@@ -2,22 +2,32 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
   <item
-    android:id="@+id/menu_item_shop_in_store"
-    android:title="@string/shop_in_store"
-    android:showAsAction="never"/>
-
-  <item
     android:id="@+id/menu_item_view_archived"
     android:title="@string/view_archived"
+    android:icon="@drawable/ic_archived"
     android:showAsAction="never"/>
 
   <item
     android:id="@+id/menu_item_select_collection"
     android:title="@string/select_collection"
+    android:icon="@drawable/ic_collection"
     android:showAsAction="never"/>
+
+  <item
+    android:id="@+id/menu_item_shop_in_store"
+    android:title="@string/shop_in_store"
+    android:icon="@drawable/ic_shopping"
+    android:showAsAction="never"/>  
 
   <item
     android:id="@+id/menu_item_settings"
     android:title="@string/settings"
+    android:icon="@drawable/ic_settings"
     android:showAsAction="never" />
+
+  <item
+    android:id="@+id/menu_item_help"
+    android:title="@string/help"
+    android:icon="@drawable/ic_bicycling"
+    android:showAsAction="ifRoom" />
 </menu>

@@ -2,8 +2,8 @@
 <manifest
  xmlns:android="http://schemas.android.com/apk/res/android"
  package="mars.wordpal"
- android:versionCode="2"
- android:versionName="1.2" >
+ android:versionCode="4"
+ android:versionName="1.4" >
 
  <uses-sdk
   android:minSdkVersion="8"
@@ -34,35 +34,48 @@
   </activity> -->
   <activity
    android:name="mars.wordpal.interfaces.SelectCollectionActivity"
-   android:label="@string/select_collection" >
+   android:label="@string/select_collection"
+   android:screenOrientation="landscape">
    <meta-data
      android:name="android.support.PARENT_ACTIVITY"
      android:value="mars.wordpal.interfaces.WordListActivity"/>
   </activity>
   <activity
    android:name="mars.wordpal.interfaces.settings.SettingsActivity"
-   android:label="@string/settings" >
+   android:label="@string/settings"
+   android:screenOrientation="landscape">
    <meta-data
      android:name="android.support.PARENT_ACTIVITY"
      android:value="mars.wordpal.interfaces.WordListActivity"/>
   </activity>
   <activity
+   android:name="mars.wordpal.interfaces.help.HelpActivity"
+   android:label="@string/help"
+   android:screenOrientation="landscape">
+   <meta-data
+     android:name="android.support.PARENT_ACTIVITY"
+     android:value="mars.wordpal.interfaces.WordListActivity" />
+  </activity>
+  <activity
    android:name="mars.wordpal.interfaces.viewarchived.ViewArchivedActivity"
-   android:label="@string/view_archived" >
+   android:label="@string/view_archived"
+   android:screenOrientation="landscape">
    <meta-data
      android:name="android.support.PARENT_ACTIVITY"
      android:value="mars.wordpal.interfaces.WordListActivity"/>
   </activity>
   <activity
    android:name="mars.wordpal.interfaces.shopinstore.ShopInStoreActivity"
-   android:label="@string/shop_in_store" >
+   android:label="@string/shop_in_store"
+   android:screenOrientation="landscape">
    <meta-data
      android:name="android.support.PARENT_ACTIVITY"
      android:value="mars.wordpal.interfaces.WordListActivity"/>
   </activity>
   <activity
    android:name="mars.wordpal.interfaces.shopinstore.ViewCollectionActivity"
-   android:label="@string/view_collection" >
+   android:label="@string/view_collection"
+   android:screenOrientation="landscape">
    <meta-data
      android:name="android.support.PARENT_ACTIVITY"
      android:value="mars.wordpal.interfaces.shopinstore.ShopInStoreActivity"/>

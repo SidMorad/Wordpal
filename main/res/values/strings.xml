@@ -20,4 +20,37 @@
  <string name = 'view'>View</string>
  <string name = 'view_collection'>View collection</string>
 
+ <string name = 'help'>Help</string>
+ <string name = 'help_introduction'>
+Welcome to Wordpal,\n
+Wordpal is kind of <a href="http://en.wikipedia.org/wiki/Leitner_system">Leitner system</a>.\n
+But a little bit different, since this is a Android program and we don\'t have a physical box here.\n
+Instead we are using Collection concept, each Collection contains serveral words or sentences.\n
+Let\'s show you this educational program thorugh snapshots.
+Below snapshot is your first page, after opening this program.
+ </string>
+ <string name = 'help_snapshot_first_page'>
+You could enter into this help page, either by selecting Menu->Help or bicycle icon on top right(if you could see it,
+works in Android 3.0 and above).\n
+First word you see is \'I\', which in Persian means من\n
+You could see it\'s translation by selecting پا button\n
+And in Deutsch means Ich, which is also could be visible by selecting de button.\n
+To process further in this game, You either should select _I Know_ button or _Not Sure_ button.\n
+If you could remember \'I\' menaining in both languages, then _I Know_ button should be selected,
+otherwise select _Not Sure_.\n
+In case you select _I Know_ button, then score for current word will increase by +1.
+Usually you need to finish one round(which at the end you see Exit button).\n
+It is recommended to take a break after each round.\n
+Default score for moving words into archive(memorized) directory is 10, and you could change it to
+ your desire number, depends to power of your short and long memory.\n
+To change this right number, follwoing below snapshots:
+ </string>
+ <string name="help_snapshot_select_collection">
+In addition each Collection could be selected or unselected, for start you have only one collection,
+ named \'WordTrainer Lesson1: People - Personen\'. As you see in following snapshot this collection
+ has green background, which means it is selected. You could unselect it by clicking on it, then
+ background will change to white. To start a round, at least one collection should be selected.
+ For adding more collection, you need to browse and buy a collection at shopping page(Menu->Shop in store). 
+ </string>
+
 </resources>

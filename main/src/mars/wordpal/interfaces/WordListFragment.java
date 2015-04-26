@@ -6,6 +6,7 @@ import mars.wordpal.R;
 import mars.wordpal.domain.model.Word;
 import mars.wordpal.domain.model.WordCollection;
 import mars.wordpal.infrastructure.DatabaseManager;
+import mars.wordpal.interfaces.help.HelpActivity;
 import mars.wordpal.interfaces.settings.SettingsActivity;
 import mars.wordpal.interfaces.shopinstore.ShopInStoreActivity;
 import mars.wordpal.interfaces.viewarchived.ViewArchivedActivity;
@@ -70,6 +71,9 @@ public class WordListFragment extends ListFragment {
     case R.id.menu_item_settings:
       Intent i4 = new Intent(getActivity(), SettingsActivity.class);
       startActivityForResult(i4, 0);
+      return true;
+    case R.id.menu_item_help:
+      startActivityForResult(new Intent(getActivity(), HelpActivity.class), 0);
       return true;
     default:
       return super.onOptionsItemSelected(item);
