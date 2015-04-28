@@ -7,7 +7,6 @@ import mars.wordpal.application.util.BuildHelper;
 import mars.wordpal.domain.model.WordCollection;
 import mars.wordpal.infrastructure.WordCollectionsInMemory;
 import android.annotation.TargetApi;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.support.v4.app.NavUtils;

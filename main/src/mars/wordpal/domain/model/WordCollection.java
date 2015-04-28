@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.TreeSet;
 
 import mars.wordpal.application.util.BuildHelper;
-
 import android.annotation.TargetApi;
 
 

@@ -3,7 +3,6 @@ package mars.wordpal.interfaces.help;
 import mars.wordpal.R;
 import mars.wordpal.application.util.BuildHelper;
 import android.annotation.TargetApi;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
