@@ -1,6 +1,8 @@
 package mars.wordpal.interfaces.help;
 
 import mars.wordpal.R;
+import mars.wordpal.application.util.BuildHelper;
+import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -19,11 +21,12 @@ public class HelpFragment extends Fragment {
     setHasOptionsMenu(true);
   }
 
+  @TargetApi(11)
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     final View v = inflater.inflate(R.layout.fragment_help, container, false);
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+    if (BuildHelper.api11orHigher()) {
       if (NavUtils.getParentActivityIntent(getActivity()) != null) {
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
       }
@@ -36,7 +39,7 @@ public class HelpFragment extends Fragment {
   public boolean onOptionsItemSelected(MenuItem item) {
     switch(item.getItemId()) {
     case android.R.id.home:
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+      if (BuildHelper.api11orHigher()) {
         if (NavUtils.getParentActivityIntent(getActivity()) != null) {
           NavUtils.navigateUpFromSameTask(getActivity());
         }

@@ -3,6 +3,7 @@ package mars.wordpal.interfaces.viewarchived;
 import java.util.ArrayList;
 
 import mars.wordpal.R;
+import mars.wordpal.application.util.BuildHelper;
 import mars.wordpal.domain.model.Word;
 import mars.wordpal.infrastructure.DatabaseManager;
 import android.annotation.TargetApi;
@@ -34,7 +35,7 @@ public class ViewArchivedFragment extends ListFragment {
     viewArchivedAdapter = new ViewArchivedAdapter(wordArchived);
     setListAdapter(viewArchivedAdapter);
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+    if (BuildHelper.api11orHigher()) {
       if (NavUtils.getParentActivityIntent(getActivity()) != null) {
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
       }
@@ -71,7 +72,8 @@ public class ViewArchivedFragment extends ListFragment {
     public View getView(final int position, View convertView, ViewGroup parent) {
 
       if (convertView == null) {
-        convertView = getActivity().getLayoutInflater().inflate(R.layout.wordarchived_item, null);
+        convertView = getActivity().getLayoutInflater().inflate(R.layout.wordarchived_item,
+                                                                parent);
       }
       TextView question = ViewHolder.get(convertView, R.id.question_id);
       final TextView score = ViewHolder.get(convertView, R.id.score_id);

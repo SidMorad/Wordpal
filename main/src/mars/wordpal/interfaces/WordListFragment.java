@@ -106,17 +106,14 @@ public class WordListFragment extends ListFragment {
       final Word w = getItem(position);
       // Display empty view if getItem returns null.
       if (w == null) {
-        return getActivity().
-            getLayoutInflater().
-            inflate(R.layout.emptylist_item, null);
+        return getActivity().getLayoutInflater().inflate(R.layout.emptylist_item,
+                                                         parent);
       }
 
       // If we weren't given a view, inflate one
       if (convertView == null) {
-        convertView =
-          getActivity().
-          getLayoutInflater().
-          inflate(R.layout.wordlist_item, null);
+        convertView = getActivity().getLayoutInflater().inflate(R.layout.wordlist_item,
+                                                                null);
       }
       // Configure the view for this wordz
       TextView questionTextView = ViewHolder.get(convertView, R.id.question_id);

@@ -1,0 +1,19 @@
+number :7
+
+status : inprogress
+
+type : Technical/improvements
+
+subject : Lint improvements
+
+description : Under this title, we are suppose to improve lint warnings.
+You may not be able to resolve many warnings, but as you trying to decrease
+the number, we appricate those improvemnts.
+
+story point : 0.2 = 0.2
+
+comments : [
+  : "2015-04-27 Story was told",
+  : "139 was total number of Lint issues, which most of them are about
+     appcompat_v7 dependency",
+]

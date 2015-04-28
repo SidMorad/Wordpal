@@ -3,6 +3,7 @@ package mars.wordpal.interfaces.shopinstore;
 import java.util.ArrayList;
 
 import mars.wordpal.R;
+import mars.wordpal.application.util.BuildHelper;
 import mars.wordpal.domain.model.WordCollection;
 import mars.wordpal.infrastructure.WordCollectionsInMemory;
 import android.annotation.TargetApi;
@@ -32,7 +33,7 @@ public class ShopInStoreFragment extends ListFragment {
     shopInStoreAdapter = new ShopInStoreAdapter(wordCollections);
     setListAdapter(shopInStoreAdapter);
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+    if (BuildHelper.api11orHigher()) {
       if (NavUtils.getParentActivityIntent(getActivity()) != null) {
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
       }
@@ -84,7 +85,8 @@ public class ShopInStoreFragment extends ListFragment {
     public View getView(int position, View convertView, ViewGroup parent) {
 
       if (convertView == null) {
-        convertView = getActivity().getLayoutInflater().inflate(R.layout.shopinstore_item, null);
+        convertView = getActivity().getLayoutInflater().inflate(R.layout.shopinstore_item,
+                                                                parent);
       }
       TextView collectionName = findViewFromCache(convertView, R.id.collection_name_id);
       Button viewButton = findViewFromCache(convertView, R.id.view_collection_id);

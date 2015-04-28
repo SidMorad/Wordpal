@@ -3,6 +3,10 @@ package mars.wordpal.domain.model;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
+import mars.wordpal.application.util.BuildHelper;
+
+import android.annotation.TargetApi;
+
 
 public class WordCollection {
 
@@ -36,27 +40,48 @@ public class WordCollection {
     return wordz;
   }
 
+  @TargetApi(9)
   public ArrayList<Word> nextTwo() {
     if (counter == 0) {
       return null;
     }
     ArrayList<Word> words = new ArrayList<Word>();
-    words.add(wordz.pollFirst());
+    if (BuildHelper.api9orHigher()) {
+      words.add(wordz.pollFirst());
+    }
+    else {
+      words.add(wordz.first());
+      wordz.remove(wordz.first());
+    }
     counter--;
     if (counter == 0) {
       return words;
     }
     counter--;
-    words.add(wordz.pollFirst());
+    if (BuildHelper.api9orHigher()) {
+      words.add(wordz.pollFirst());
+    }
+    else {
+      words.add(wordz.first());
+      wordz.remove(wordz.first());
+    }
     return words;
   }
 
+  @TargetApi(9)
   public Word nextOne() {
     if (counter == 0) {
       return null;
     }
     counter--;
-    return wordz.pollFirst();
+    if (BuildHelper.api9orHigher()) {
+      return wordz.pollFirst();
+    }
+    else {
+      Word first = wordz.first();
+      wordz.remove(first);
+      return first;
+    }
   }
 
 }

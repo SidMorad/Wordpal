@@ -17,8 +17,7 @@
   android:icon="@drawable/ic_launcher"
   android:label="@string/wordpal"
   android:theme="@style/AppTheme"
-  android:allowBackup="true"
-  android:supportsRtl = 'false'>
+  android:allowBackup="true">
   <activity
    android:name="mars.wordpal.interfaces.WordListActivity"
    android:label="@string/wordpal"

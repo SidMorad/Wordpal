@@ -1,6 +1,7 @@
 package mars.wordpal.interfaces.settings;
 
 import mars.wordpal.R;
+import mars.wordpal.application.util.BuildHelper;
 import mars.wordpal.domain.model.Settings;
 import mars.wordpal.infrastructure.DatabaseManager;
 import android.annotation.TargetApi;
@@ -53,7 +54,7 @@ public class SettingsFragment extends Fragment {
       }
     });
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+    if (BuildHelper.api11orHigher()) {
       if (NavUtils.getParentActivityIntent(getActivity()) != null) {
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
       }

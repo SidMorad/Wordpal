@@ -1,22 +1,23 @@
 package mars.wordpal.interfaces;
 
 import mars.wordpal.R;
+import mars.wordpal.application.util.BuildHelper;
+import android.annotation.TargetApi;
 import android.content.Intent;
-import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.TextView;
 
 public class WordListActivity extends SingleFragmentActivity {
-//  private static final String TAG = "WordListActivity";
 
   @Override
   protected Fragment createFragment() {
     return new WordListFragment();
   }
 
+  @TargetApi(11)
   public void resetActivity(View v) {
-    if (Build.VERSION.SDK_INT >= 11) {
+    if (BuildHelper.api11orHigher()) {
       recreate();
     }
     else {

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.TreeSet;
 
 import mars.wordpal.R;
+import mars.wordpal.application.util.BuildHelper;
 import mars.wordpal.domain.model.Word;
 import mars.wordpal.domain.model.WordCollection;
 import mars.wordpal.infrastructure.WordCollectionsInMemory;
@@ -32,7 +33,7 @@ public class ViewCollectionFragment extends Fragment {
     setHasOptionsMenu(true);
     collectionName = getActivity().getIntent().getStringExtra(COLLECTION_NAME);
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+    if (BuildHelper.api11orHigher()) {
       if (NavUtils.getParentActivityIntent(getActivity()) != null) {
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
       }
@@ -95,7 +96,8 @@ public class ViewCollectionFragment extends Fragment {
     public View getView(int position, View convertView, ViewGroup parent) {
 
       if (convertView == null) {
-        convertView = getActivity().getLayoutInflater().inflate(R.layout.viewcollection_item, null);
+        convertView = getActivity().getLayoutInflater().inflate(R.layout.viewcollection_item,
+                                                                parent);
       }
       TextView cNameTextView = findViewFromCache(convertView, R.id.question_id);
 

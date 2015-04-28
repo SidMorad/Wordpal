@@ -21,6 +21,11 @@
  <string name = 'view_collection'>View collection</string>
 
  <string name = 'help'>Help</string>
+ <string name = 'snapshot_first_page'>Snapshot first page</string>
+ <string name = 'snapshot_menu'>Snapshot menu</string>
+ <string name = 'snapshot_settings'>Snapshot settings</string>
+ <string name = 'snapshot_select_collection'>Snapshot select collection</string>
+ <string name = 'snapshot_shop_in_store'>Snapshot shop in store</string>
  <string name = 'help_introduction'>
 Welcome to Wordpal,\n
 Wordpal is kind of <a href="http://en.wikipedia.org/wiki/Leitner_system">Leitner system</a>.\n
@@ -43,7 +48,7 @@ Usually you need to finish one round(which at the end you see Exit button).\n
 It is recommended to take a break after each round.\n
 Default score for moving words into archive(remembered) directory is 10, and you could change it to
  your desire number, depends to power of your short and long memory.\n
-To change this right number, follwoing below snapshots:
+To change this right number, following below snapshots:
  </string>
  <string name="help_snapshot_select_collection">
 In addition each Collection could be selected or unselected, for start you have only one collection,
