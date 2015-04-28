@@ -1,0 +1,50 @@
+buildscript {
+  apply from: file('../gradle/buildscript.gradle'), to: buildscript
+}
+
+version "1.4"
+
+apply plugin: 'com.android.application'
+
+dependencies {
+  compile fileTree(dir: '../appcompat_v7/libs', include: ['*.jar'])
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+android {
+  compileSdkVersion 19
+  buildToolsVersion "19.1.0"
+
+  sourceSets {
+    main {
+      manifest.srcFile 'AndroidManifest.xml'
+      res.srcDirs = ['res', '../appcompat_v7/res']
+      java.srcDirs = ['src']
+      aidl.srcDirs = ['src']
+      resources.srcDirs = ['src']
+      renderscript.srcDirs = ['src']
+      assets.srcDirs = ['assets']
+    }
+  }
+
+  signingConfigs {
+    releaseSigning {
+      storeFile file ((releaseKeystore.size() > 0) ? releaseKeystore : 'NO_KEYSTORE')
+      storePassword releaseKeystorePassword
+      keyAlias releaseKeyAlias
+      keyPassword releaseKeyPassword
+    }
+  }
+
+  buildTypes {
+    if (releaseKeystore.size() > 0) {
+      release {
+        signingConfig signingConfigs.releaseSigning
+      }
+    }
+
+    debug {
+      debuggable true
+    }
+  }
+}
