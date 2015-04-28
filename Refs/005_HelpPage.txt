@@ -1,6 +1,6 @@
 number :5
 
-status : closed
+status : closed.
 
 type : Story/feature
 

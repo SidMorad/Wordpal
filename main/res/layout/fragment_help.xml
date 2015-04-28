@@ -67,5 +67,12 @@
     android:layout_gravity="start"
     android:src="@drawable/wordpal_05_snapshot_shop_in_store"/>
 </TableRow>
+<TableRow>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/help_conclusion"
+    android:textSize="@dimen/font_medium"/>
+</TableRow>
 </TableLayout>
 </ScrollView>

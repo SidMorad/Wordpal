@@ -41,7 +41,7 @@ otherwise select _Not Sure_.\n
 In case you select _I Know_ button, then score for current word will increase by +1.
 Usually you need to finish one round(which at the end you see Exit button).\n
 It is recommended to take a break after each round.\n
-Default score for moving words into archive(memorized) directory is 10, and you could change it to
+Default score for moving words into archive(remembered) directory is 10, and you could change it to
  your desire number, depends to power of your short and long memory.\n
 To change this right number, follwoing below snapshots:
  </string>
@@ -52,5 +52,11 @@ In addition each Collection could be selected or unselected, for start you have 
  background will change to white. To start a round, at least one collection should be selected.
  For adding more collection, you need to browse and buy a collection at shopping page(Menu->Shop in store). 
  </string>
-
+ <string name="help_conclusion">
+Yeap, that\'s all guys for now, if you like this app, say a word of encourgement,
+I may be encourged to add more word-collections for you ! :-)\n
+And(0h) one more thing, if you are interested in pronunciation,
+you could hear these words from below web address:\n
+<u>http://www.dw.de/learn-german/audiotrainer/s-9677</u>
+ </string>
 </resources>
