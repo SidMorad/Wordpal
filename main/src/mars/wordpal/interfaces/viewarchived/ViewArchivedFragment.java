@@ -72,7 +72,7 @@ public class ViewArchivedFragment extends ListFragment {
 
       if (convertView == null) {
         convertView = getActivity().getLayoutInflater().inflate(R.layout.wordarchived_item,
-                                                                parent);
+                                                                null);
       }
       TextView question = ViewHolder.get(convertView, R.id.question_id);
       final TextView score = ViewHolder.get(convertView, R.id.score_id);

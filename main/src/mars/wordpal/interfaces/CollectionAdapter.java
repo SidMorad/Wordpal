@@ -47,7 +47,7 @@ public class CollectionAdapter extends BaseAdapter {
       gridView = new View(context);
 
       gridView = inflater.inflate(R.layout.fragment_select_collection_fields,
-                                  parent);
+                                  null);
 
       TextView textView = (TextView) gridView.findViewById(R.id.collectionName);
       textView.setText(collections.get(position).name());

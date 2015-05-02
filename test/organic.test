@@ -18,7 +18,7 @@ TSDIR=src
 TTDIR=bin/classes
 
 # Executing FactRunner main class
-#javac -classpath $CPATH $TSDIR/organic/fact/FactRunner.java -d $PWD/$TTDIR
+javac -classpath $CPATH $TSDIR/organic/fact/FactRunner.java -d $PWD/$TTDIR
 java -classpath $CPATH organic.fact.FactRunner
 
 ETIME="$(date +%s)"

@@ -60,8 +60,8 @@ In addition each Collection could be selected or unselected, for start you have 
  <string name="help_conclusion">
 Yeap, that\'s all guys for now, if you like this app, say a word of encourgement,
 I may be encourged to add more word-collections for you ! :-)\n
-And(0h) one more thing, if you are interested in pronunciation,
+<!--And(0h) one more thing, if you are interested in pronunciation,
 you could hear these words from below web address:\n
-<u>http://www.dw.de/learn-german/audiotrainer/s-9677</u>
+<u>http://www.dw.de/learn-german/audiotrainer/s-9677</u>-->
  </string>
 </resources>
