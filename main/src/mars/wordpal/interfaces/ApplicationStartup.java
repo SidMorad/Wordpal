@@ -12,6 +12,7 @@ public class ApplicationStartup extends Application {
 
     wordpalDatabaseHelper = new WordpalDatabaseHelper(getApplicationContext());
     wordpalDatabaseHelper.doCheckLessonOneInserted();
+//    wordpalDatabaseHelper.doCheckLessonXInserted(WordCollectionsInMemory.wordTrainerLesson2().name());
   }
 
 }

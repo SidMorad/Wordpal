@@ -142,6 +142,15 @@ public class WordpalDatabaseHelper extends SQLiteOpenHelper {
     }
   }
 
+  public void doCheckLessonXInserted(String collectionName) {
+    Log.d(TAG, "Collection lesson X ["+ collectionName +"] consideration.");
+    if (selectCollection(collectionName)
+        == null) {
+      insertCollection(WordCollectionsInMemory.get(collectionName));
+      Log.d(TAG, "Lesson X ["+ collectionName +"] inserted.");
+    }
+  }
+
   public ArrayList<WordCollection> userCollections() {
     Cursor cursor = getReadableDatabase().query(true, TABLE_COLLECTION,
         new String[] { ID, NAME, ACTIVE },
