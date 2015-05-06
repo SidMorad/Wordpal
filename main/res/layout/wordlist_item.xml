@@ -103,16 +103,41 @@
 <TableRow
   android:textAlignment = 'center'
   android:gravity = 'center'>
-
+  <LinearLayout
+    android:layout_weight = '1'
+    android:layout_width = 'match_parent'
+    android:layout_height = 'match_parent'>
+  <TextView
+    android:layout_width = 'match_parent'
+    android:layout_height = 'match_parent'
+    android:layout_weight = '0.25'
+    />
   <Button
     android:id = '@+id/exit_id'
     android:text = '@string/exit'
+    android:textColor = '@drawable/button_text_color'
+    android:background = '@drawable/button_exit'
     android:gravity = 'center'
     android:onClick = 'exitActivity'
     android:textSize = '@dimen/font_medium'
-    android:visibility = 'invisible'
-    android:layout_width = 'match_parent'
-    android:layout_height = 'match_parent'
+    android:layout_weight = '0.25'
+    style = '@style/button_at_wordlist'
     />
+  <Button
+    android:text = '@string/refresh'
+    android:textColor = '@drawable/button_text_color'
+    android:background = '@drawable/button_exit'
+    android:gravity = 'center'
+    android:onClick="resetActivity"
+    android:textSize = '@dimen/font_medium'
+    android:layout_weight = '0.25'
+    style = '@style/button_at_wordlist'
+    />
+    <TextView
+      android:layout_width = 'match_parent'
+      android:layout_height = 'match_parent'
+      android:layout_weight = '0.25'
+    />
+  </LinearLayout>
 </TableRow>
 </TableLayout>

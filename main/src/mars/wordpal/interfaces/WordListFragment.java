@@ -27,7 +27,6 @@ import android.widget.Toast;
 
 public class WordListFragment extends ListFragment {
 
-//  private static final String TAG = "WordListFragment" ;
   private ArrayList<Word> wordz;
   private WordAdapter wordAdapter;
   private WordCollection wordCollection;
@@ -107,7 +106,7 @@ public class WordListFragment extends ListFragment {
       // Display empty view if getItem returns null.
       if (w == null) {
         return getActivity().getLayoutInflater().inflate(R.layout.emptylist_item,
-                                                         parent);
+                                                         null);
       }
 
       // If we weren't given a view, inflate one
@@ -125,7 +124,7 @@ public class WordListFragment extends ListFragment {
       Button faButton = ViewHolder.get(convertView, R.id.fa_id);
       faButton.setTag(w.getAnswerFa());
       final TextView answerTextView = ViewHolder.get(convertView, R.id.answer_id);
-      final TextView exitButton = ViewHolder.get(convertView, R.id.exit_id);
+//    final TextView exitButton = ViewHolder.get(convertView, R.id.exit_id);
 
       Button iKnowBtn = ViewHolder.get(convertView, R.id.i_know_id);
       iKnowBtn.setOnClickListener(new OnClickListener() {
@@ -136,13 +135,13 @@ public class WordListFragment extends ListFragment {
             Toast.makeText(getActivity(), "One round is done.", Toast.LENGTH_LONG).show();
             wordCollection = databaseManager.currentCollection();
             answerTextView.setText("Break time, have a tea!");
-            exitButton.setVisibility(View.VISIBLE);
+//          exitButton.setVisibility(View.VISIBLE);
           } else {
             wordz.clear();
             wordz.add(nextOne);
             // Note wordAdapter.notifyDataSetChanged(); didn't work as expected, so we use next line
             setListAdapter(wordAdapter);
-            exitButton.setVisibility(View.INVISIBLE);
+//          exitButton.setVisibility(View.INVISIBLE);
           }
         }
       });
@@ -156,12 +155,12 @@ public class WordListFragment extends ListFragment {
             Toast.makeText(getActivity(), "One round is done.", Toast.LENGTH_LONG).show();
             wordCollection = databaseManager.currentCollection();
             answerTextView.setText("Break time, have a tea!");
-            exitButton.setVisibility(View.VISIBLE);
+//          exitButton.setVisibility(View.VISIBLE);
           } else {
             wordz.clear();
             wordz.add(nextOne);
             setListAdapter(wordAdapter);
-            exitButton.setVisibility(View.INVISIBLE);
+//          exitButton.setVisibility(View.INVISIBLE);
           }
         }
       });
