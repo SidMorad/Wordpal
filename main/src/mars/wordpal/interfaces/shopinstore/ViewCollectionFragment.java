@@ -96,7 +96,7 @@ public class ViewCollectionFragment extends Fragment {
 
       if (convertView == null) {
         convertView = getActivity().getLayoutInflater().inflate(R.layout.viewcollection_item,
-                                                                parent);
+                                                                null);
       }
       TextView cNameTextView = findViewFromCache(convertView, R.id.question_id);
 

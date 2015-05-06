@@ -85,7 +85,7 @@ public class ShopInStoreFragment extends ListFragment {
 
       if (convertView == null) {
         convertView = getActivity().getLayoutInflater().inflate(R.layout.shopinstore_item,
-                                                                parent);
+                                                                null);
       }
       TextView collectionName = findViewFromCache(convertView, R.id.collection_name_id);
       Button viewButton = findViewFromCache(convertView, R.id.view_collection_id);
