@@ -124,7 +124,7 @@
     style = '@style/button_at_wordlist'
     />
   <Button
-    android:text = '@string/refresh'
+    android:text = '@string/reset'
     android:textColor = '@drawable/button_text_color'
     android:background = '@drawable/button_exit'
     android:gravity = 'center'
