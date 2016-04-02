@@ -83,4 +83,20 @@ public class WordCollection {
     }
   }
 
+  @Override
+  public int hashCode() {
+    return name.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == null) return false;
+    if (o == this) return true;
+    if (o instanceof WordCollection) {
+      WordCollection other = (WordCollection) o;
+      return name.equals(other.name);
+    }
+    return super.equals(o);
+  }
+
 }

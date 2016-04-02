@@ -17,7 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,11 +39,11 @@ public class SelectCollectionFragment extends Fragment {
       Bundle savedInstanceState) {
     View v = inflater.inflate(R.layout.fragment_select_collection, parent, false);
 
-    GridView gridView = (GridView) v.findViewById(R.id.selectCollectionContainer);
+    ListView listView = (ListView) v.findViewById(R.id.selectCollectionContainer);
     userCollections = databaseManager.userCollections();
-    gridView.setAdapter(new CollectionAdapter(v.getContext(), userCollections));
+    listView.setAdapter(new CollectionAdapter(v.getContext(), userCollections));
 
-    gridView.setOnItemClickListener(new OnItemClickListener() {
+    listView.setOnItemClickListener(new OnItemClickListener() {
       @Override
       public void onItemClick(AdapterView<?> parent, View view, int position,
           long id) {

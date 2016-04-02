@@ -154,7 +154,7 @@ public class WordpalDatabaseHelper extends SQLiteOpenHelper {
   public ArrayList<WordCollection> userCollections() {
     Cursor cursor = getReadableDatabase().query(true, TABLE_COLLECTION,
         new String[] { ID, NAME, ACTIVE },
-        null, null, null, null, NAME, null);
+        null, null, null, null, ID, null);
       ArrayList<WordCollection> result = new ArrayList<WordCollection>();
       if (cursor.moveToFirst()) {
         do {

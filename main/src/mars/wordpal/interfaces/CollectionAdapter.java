@@ -6,6 +6,7 @@ import mars.wordpal.R;
 import mars.wordpal.domain.model.WordCollection;
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +35,7 @@ public class CollectionAdapter extends BaseAdapter {
 
   @Override
   public long getItemId(int position) {
-    return 0;
+    return position;
   }
 
   @Override
@@ -42,29 +43,31 @@ public class CollectionAdapter extends BaseAdapter {
     LayoutInflater inflater = (LayoutInflater) context
         .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-    View gridView;
     if (convertView == null) {
-      gridView = new View(context);
+      View view = new View(context);
 
-      gridView = inflater.inflate(R.layout.fragment_select_collection_fields,
+      view = inflater.inflate(R.layout.fragment_select_collection_fields,
                                   null);
 
-      TextView textView = (TextView) gridView.findViewById(R.id.collectionName);
+      TextView textView = (TextView) view.findViewById(R.id.collectionName);
+      Log.d("WP", "collection return for position [" + position + "] value [" + collections.get(position).name() + "]");
       textView.setText(collections.get(position).name());
-
+      convertView = view;
     }
     else {
-      gridView = convertView;
+      TextView textView = (TextView) convertView.findViewById(R.id.collectionName);
+      Log.d("WP", "collection return for position [" + position + "] value [" + collections.get(position).name() + "]");
+      textView.setText(collections.get(position).name());
     }
 
     if (collections.get(position).active()) {
-      gridView.setBackgroundColor(Color.GREEN);
+      convertView.setBackgroundColor(Color.GREEN);
     }
     else {
-      gridView.setBackgroundColor(Color.WHITE);
+      convertView.setBackgroundColor(Color.WHITE);
     }
 
-    return gridView;
+    return convertView;
   }
 
 }
