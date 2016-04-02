@@ -14,7 +14,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class WordpalDatabaseHelper extends SQLiteOpenHelper {
-  private static final String DB_NAME = "wordpal4.sqlite";
+  private static final String DB_NAME = "wordpal6.sqlite";
   private static final int VERSION = 1;
 
   private static final String TABLE_COLLECTION = "collection";

@@ -70,7 +70,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("I find that boring.", "Ich finde das langweilig.", "من آن را خسته کننده یافتم.", 0));
     w.add(new Word("I find that terrible.", "Ich finde dass furchtbar.", "من آن را وحشتناک یافتم.", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 26: In nature - In der Natur", w, true);
+      "Wordtrainer Lesson 26: In nature - In der Natur", w, false);
   }
 
   public static WordCollection wordTrainerLesson25() {
@@ -94,7 +94,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("Go on a harbour tour.", "Machen Sie eine Hafenrundfahrt.", "برو به تور بندر.", 0));
     w.add(new Word("Did you know, other interesting places?", "Wußten Sie, andere interessante Orte?", "آیا مکان‌های جالب دیگر می‌شناسید؟", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 25: In the city - In der Stadt", w, true);
+      "Wordtrainer Lesson 25: In the city - In der Stadt", w, false);
   }
 
   public static WordCollection wordTrainerLesson24() {
@@ -118,7 +118,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("I will pick you up at home.", "Ich hole dich von zu Hause ab.", "من شما را از خانه سوار می‌کنم.", 0));
     w.add(new Word("I will pick you up at the bus stop.", "Ich hole dich an der Bushaltestelle ab.", "من شما را از ایستگاه اتوبوس سوار می‌کنم.", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 24: Appointment - Verabredung", w, true);
+      "Wordtrainer Lesson 24: Appointment - Verabredung", w, false);
   }
 
   public static WordCollection wordTrainerLesson23() {
@@ -142,7 +142,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("Do you have good time in classroom?", "Haben Sie gute Zeit mit Klassenzimmer?", "آیا اوقات خوشی در کلاس درس دارید؟", 0));
     w.add(new Word("Yes, we had fun.", "Ja, wir hatten Spaß.", "بله، برای ما سرگرم کننده است.", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 23: Learning foreign languages - Fremdsprachen lernen", w, true);
+      "Wordtrainer Lesson 23: Learning foreign languages - Fremdsprachen lernen", w, false);
   }
 
   public static WordCollection wordTrainerLesson22() {
@@ -166,7 +166,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("Are you also coming?", "Kommen Sie auch?", "شما هم می‌آیید؟", 0));
     w.add(new Word("Yes, we also been invited.", "Ja, wir sind auch eingeladen.", "بله، ما هم دعوت شده‌ایم.", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 22: Small Talk 3 - Small Talk 3", w, true);
+      "Wordtrainer Lesson 22: Small Talk 3 - Small Talk 3", w, false);
   }
 
   public static WordCollection wordTrainerLesson21() {
@@ -190,7 +190,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("No, my wife is also here.", "Nein, meine Frau ist auch hier.", "خیر، همسرم هم اینجاست.", 0));
     w.add(new Word("And those are my two children.", "Und dort sind meine beiden Kinder.", "و آنها دو فرزند من هستند.", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 21: Small Talk 2 - Small Talk 2", w, true);
+      "Wordtrainer Lesson 21: Small Talk 2 - Small Talk 2", w, false);
   }
 
   public static WordCollection wordTrainerLesson20() {
@@ -214,7 +214,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("Do you like to go to the theater?", "Gehen Sie gern ins theater?", "آیا دوست دارید به تئاتر بروید", 0));
     w.add(new Word("Do you like to the opera?", "Gehen Sie gern in die Oper?", "آیا دوست دارید به اپرا بروید؟", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 20: Small Talk 1 - Small Talk 1", w, true);
+      "Wordtrainer Lesson 20: Small Talk 1 - Small Talk 1", w, false);
   }
 
   public static WordCollection wordTrainerLesson19() {
@@ -238,7 +238,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("Here are the knives, the forks and the spoons.", "Hier sind die Messer, die Gabeln und die Löffel.", "اینجا چاقو، چنگال و قاشق هستند", 0));
     w.add(new Word("Here are the glasses, the plates and the napkins.", "Hier sind die Gläse, die Teller und die Servientten.", "اینجا لیوان‌ها، بشقاب‌ها و دستمال‌سفره هستند.", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 19: In the kitchen - In der Küche", w, true);
+      "Wordtrainer Lesson 19: In the kitchen - In der Küche", w, false);
   }
 
   public static WordCollection wordTrainerLesson18() {
@@ -262,7 +262,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("Who does the vacuuming?", "Wer saugt staub?", "چه کسی جارو می‌کشد؟", 0));
     w.add(new Word("Who does the dishes?", "Wer tut Das Geschirr?", "چه کسی ظرف‌ها رو پاک می‌کند؟", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 18: House cleaning - Hausputz", w, true);
+      "Wordtrainer Lesson 18: House cleaning - Hausputz", w, false);
   }
 
   public static WordCollection wordTrainerLesson17() {
@@ -286,7 +286,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("My stereo is there.", "Meine Stereo ist dort.", "استریو من آنجاست.", 0));
     w.add(new Word("The TV set is brand new.", "Der Fernseher ist ganz neu.", "تلویزیون جدید است. ", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 17: Around the house - Im Haus", w, true);
+      "Wordtrainer Lesson 17: Around the house - Im Haus", w, false);
   }
 
   public static WordCollection wordTrainerLesson16() {
@@ -310,7 +310,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("It is cold today.", "Es ist kalt heute.", "امروز سرد است.", 0));
     w.add(new Word("It is warm today.", "Es ist warm heute.", "امروز گرم است.", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 16: Seasons and Weather - Jahreszeiten und Wetter", w, true);
+      "Wordtrainer Lesson 16: Seasons and Weather - Jahreszeiten und Wetter", w, false);
   }
 
   public static WordCollection wordTrainerLesson15() {
@@ -334,7 +334,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("We need carrots and tomatoes for the soup.", "Wir brauchen Karotten und Tomaten für die Suppe.", "ما به هویج و گوجه برای سوپ نیاز داریم.", 0));
     w.add(new Word("Where is the supermarket?", "Wo ist ein Supermarkt?", "سوپرمارکت کجاست؟", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 15: Fruits and food - Früchte und Lebensmittel", w, true);
+      "Wordtrainer Lesson 15: Fruits and food - Früchte und Lebensmittel", w, false);
   }
 
   public static WordCollection wordTrainerLesson14() {
@@ -358,7 +358,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("What color is the cloud? Gray", "Welche Farbe hat die Wolke? Grau", "ابر چه رنگی است؟ خاکستری", 0));
     w.add(new Word("What color are the tires? Black", "Welche Farbe haben die Gummireifen? Schwarz", "لاستیک‌های اتومبیل چه رنگی هستند؟ سیاه", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 14: Colors - Farben", w, true);
+      "Wordtrainer Lesson 14: Colors - Farben", w, false);
   }
 
   public static WordCollection wordTrainerLesson13() {
@@ -382,7 +382,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("To the disco.", "In die Disko", "به دیسکو", 0));
     w.add(new Word("They do not like to dance.", "Sie tanzen nicht gern.", "آنها به رقصیدن تمایل ندارند.", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 13: Activities - Tätigkeiten", w, true);
+      "Wordtrainer Lesson 13: Activities - Tätigkeiten", w, false);
   }
 
   public static WordCollection wordTrainerLesson12() {
@@ -406,7 +406,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("The child likes cocoa and apple juice.", "Das Kind mag Kakao und Apfel saft.", "بچه کاکائو و آب سیب دوست دارد.", 0));
     w.add(new Word("The woman likes orange and grapefruit juice.", "Die Frau mag Orangen saft und Grapefruit saft.", "آن خانم آب پرتقال و گریپ‌فروت دوست دارد. ", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 12: Beverages - Getränke", w, true);
+      "Wordtrainer Lesson 12: Beverages - Getränke", w, false);
   }
 
   public static WordCollection wordTrainerLesson11() {
@@ -430,7 +430,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("July, August, September", "Juli, August, September", "جولای، آگوست، سپتامبر", 0));
     w.add(new Word("October, November, December", "Oktober, November, Dezember", "اکتبر، نوامبر، دسامبر", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 11: Months - Monate", w, true);
+      "Wordtrainer Lesson 11: Months - Monate", w, false);
   }
 
   public static WordCollection wordTrainerLesson10() {
@@ -453,7 +453,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("Peter is Martha's friend.", "Peter ist der Freund von Martha.", "پیتر دوست مارتا است.", 0));
     w.add(new Word("Martha is Peter's friend.", "Martha ist die Freundin von Peter.", "مارتا دوست پیتر است.", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 10: Yesterday, today, tomorrow - Gestern, heute, morgen", w, true);
+      "Wordtrainer Lesson 10: Yesterday, today, tomorrow - Gestern, heute, morgen", w, false);
   }
 
   public static WordCollection wordTrainerLesson9() {
@@ -477,7 +477,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("The week has seven days.", "Die Woche hat sieben Tage.", "یک هفته هفت روز دارد.", 0));
     w.add(new Word("We only work for five days.", "Wir arbeiten nur fünf Tage.", "ما فقط برای پنج روز کار می‌کنیم.", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 9: Days of the week - Wochentage", w, true);
+      "Wordtrainer Lesson 9: Days of the week - Wochentage", w, false);
   }
 
   public static WordCollection wordTrainerLesson8() {
@@ -501,7 +501,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("An hour has sixty minutes.", "Eine Stunde hat sechzig Minuten.", "هر ساعت شصد دقیقه دارد.", 0));
     w.add(new Word("A day has twenty-four hours.", "Ein Tag hat vierundzwanzig Stunden.", "هر روز بیست و چهار ساعت دارد.", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 8: The time - Uhrzeiten", w, true);
+      "Wordtrainer Lesson 8: The time - Uhrzeiten", w, false);
   }
 
   public static WordCollection wordTrainerLesson7() {
@@ -524,7 +524,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("Eight. The eighth.", "Acht. Der Achte.", "هشت. هشتم.", 0));
     w.add(new Word("Nine. The ninth.", "Neun. Der Neunte.", "نه. نهم.", 0));
     return new WordCollection(0
-      , "Wordtrainer Lesson 7: Numbers - Zahlen", w, true);
+      , "Wordtrainer Lesson 7: Numbers - Zahlen", w, false);
   }
 
   public static WordCollection wordTrainerLesson6() {
@@ -546,7 +546,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("You write.", "Du schreibst.", "تو نوشتی.", 0));
     w.add(new Word("He writes.", "Er schreibt.", "او نوشت.", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 6: Reading and writing - Lesen und schreiben", w, true);
+      "Wordtrainer Lesson 6: Reading and writing - Lesen und schreiben", w, false);
   }
 
   public static WordCollection wordTrainerLesson5() {
@@ -570,7 +570,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("Panama is in Central America.", "Panama liegt in Mittelamerika.", "پاناما در آمریکای مرکزی است.", 0));
     w.add(new Word("Brazil is in South America.", "Brasilien liegt in Südamerika.", "برزیل در آمریکای جنوبی است.", 0));
     return new WordCollection(0,
-      "Wordtrainer Lessson 5: Countries and Languages - Länder und Sprachen", w, true);
+      "Wordtrainer Lesson 5: Countries and Languages - Länder und Sprachen", w, false);
   }
   public static WordCollection wordTrainerLesson4() {
     TreeSet<Word> w = new TreeSet<Word>(WordComparator.getInstance());
@@ -593,7 +593,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("We want to understand people.", "Wir wollen Menschen verstehen.", "ما می‌خواهیم مردم رو بفهمیم.", 0));
     w.add(new Word("We want to speak with people.", "Wir wollen mit Menschen sprechen.", "ما می‌خواهیم با مردم صحبت کنیم.", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson4: At school - In der Schule", w, true);
+      "Wordtrainer Lesson 4: At school - In der Schule", w, false);
   }
 
   public static WordCollection wordTrainerLesson3() {
@@ -616,7 +616,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("Good bye!", "Auf Wiedersehen!", "خداحافظ!", 0));
     w.add(new Word("See you soon!", "Bis bald!", "زود می‌بینمت!", 0));
     return new WordCollection(0,
-      "Wordtrainer Lesson 3: Getting to know others - Kennen lernen", w, true);
+      "Wordtrainer Lesson 3: Getting to know others - Kennen lernen", w, false);
   }
 
   public static WordCollection wordTrainerLesson2() {
@@ -636,7 +636,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("The family is not small", "Die Familie ist nicht klein", "خانواده کوچک نیست", 0));
     w.add(new Word("The family is big", "Die Familie ist groß", "خانواده بزرگ است", 0));
     return new WordCollection(0,
-      "WordTrainer Lesson2: Family Members - Familie", w, true);
+      "Wordtrainer Lesson 2: Family Members - Familie", w, false);
   }
 
   public static WordCollection wordTrainerLesson1() {
@@ -660,7 +660,7 @@ public class WordCollectionsInMemory {
     w.add(new Word("You are here.", "Ihr seid hier", "شما اینجا هستید", 0));
     w.add(new Word("They are all here", "Sie sind alle hier", "آنها همه اینجا هستند", 0));
     return new WordCollection(0,
-      "WordTrainer Lesson1: People - Personen", w, true);
+      "Wordtrainer Lesson 1: People - Personen", w, true);
   }
 
 }
