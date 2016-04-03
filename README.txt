@@ -22,7 +22,7 @@ https://cafebazaar.ir/app/mars.wordpal/?l=en
 # Use gradle build system (version 1.12 was used).
 > gradle build
 
-# For run test cases, run follwoing script:
+# For run test cases, run following script:
 > sh organic.test
 
 # see also Refs/*.txt for reviewing history of done features, tasks and
